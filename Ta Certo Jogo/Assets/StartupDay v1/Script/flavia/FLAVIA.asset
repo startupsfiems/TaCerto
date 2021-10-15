@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cd67302263445f4927a157ce0b7280, type: 3}
+  m_Name: FLAVIA
+  m_EditorClassIdentifier: 
+  questoes:
+  - {fileID: 11400000, guid: 23a6ff9685ef14c53a2d782bd51cde83, type: 2}
+  - {fileID: 11400000, guid: 09c92b5bad12c4c6289e8b9d02b681f1, type: 2}
+  - {fileID: 11400000, guid: 4d5a05015d0464333b7c5f22d35c8f29, type: 2}
+  - {fileID: 11400000, guid: e43e01c9cf64d4c0c9f28424559da66b, type: 2}
+  - {fileID: 11400000, guid: 7b40d7148285a469997b4b9da862afee, type: 2}
+  - {fileID: 11400000, guid: 3a7cb9e8f35924062ac08a8bf926c436, type: 2}
+  - {fileID: 11400000, guid: 788ff7b8f203d45e5a7349ccd4e275f6, type: 2}
+  - {fileID: 11400000, guid: 5bae572f316a54c978de81fe1af83e33, type: 2}
+  - {fileID: 11400000, guid: 7f7ea8b7c2f4c4ac6b68f2dca260309a, type: 2}
+  - {fileID: 11400000, guid: 7430bd6291f0a45ebbe7a2b534361773, type: 2}
+  - {fileID: 11400000, guid: 19f308e1491ae4ed8bbeb1c4df55c60b, type: 2}
+  - {fileID: 11400000, guid: eebdaff23a6a741939b9223c58498000, type: 2}
+  - {fileID: 11400000, guid: f6a55876cc8e74850be600af0a30c8f4, type: 2}
+  - {fileID: 11400000, guid: 59d1df879e8e14309906f547784fac37, type: 2}
+  - {fileID: 11400000, guid: 0071be5b2789d4ac193487e398c6b3bd, type: 2}

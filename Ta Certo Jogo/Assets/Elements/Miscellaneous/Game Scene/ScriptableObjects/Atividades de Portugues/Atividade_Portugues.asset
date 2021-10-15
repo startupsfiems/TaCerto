@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1739e732dcc174c9901347d66ca351, type: 3}
+  m_Name: Atividade_Portugues
+  m_EditorClassIdentifier: 
+  listaQuestoes:
+  - {fileID: 11400000, guid: c9d84c077e9ddab498845b3ca8cd9d9f, type: 2}
+  - {fileID: 11400000, guid: 623e9fd2b59da97419b1fa738e259112, type: 2}
+  - {fileID: 11400000, guid: 830d1be46dbfc324cab1b9f0cdb7cbc5, type: 2}
+  - {fileID: 11400000, guid: 286b6a758a4074e418810a2b3ca75824, type: 2}
+  - {fileID: 11400000, guid: 480779570a26f3f4a8f330c91434b8e8, type: 2}
+  - {fileID: 11400000, guid: e09ee6f4658c6e54e958c5bc9628655b, type: 2}
+  - {fileID: 11400000, guid: 6b7f465ba6045164d9644ad595bdb270, type: 2}
+  - {fileID: 11400000, guid: 8d01104742ad814439a1f9c338783c2b, type: 2}
+  - {fileID: 11400000, guid: 90280c111e82c6947ba09fbfc548f0b5, type: 2}
+  - {fileID: 11400000, guid: 990791c96cb2f7b4fbd311d18bf35297, type: 2}

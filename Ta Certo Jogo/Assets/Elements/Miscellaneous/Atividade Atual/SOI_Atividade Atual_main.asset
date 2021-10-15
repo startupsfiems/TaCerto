@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778c4a3fdaf75405996d0e7c8e339c14, type: 3}
+  m_Name: SOI_Atividade Atual_main
+  m_EditorClassIdentifier: 
+  numeroDeQuestao: 5
+  imagem:
+  - {fileID: 21300000, guid: 01a31319a9f8944f0bc17f2bf56e010b, type: 3}
+  - {fileID: 21300000, guid: d234d287ce967483793b8550bb60c7d4, type: 3}
+  - {fileID: 21300000, guid: cfdecd0b3035c4f4fa6cafd414f87f8f, type: 3}
+  - {fileID: 21300000, guid: 01121652e9fa84fbea44d0f58d04e5e0, type: 3}
+  - {fileID: 21300000, guid: b104696cbd55a4f309ad8882e26dabd1, type: 3}
+  texto:
+  - "O T\xE1 Certo deve ser um jogo educativo que deve ser disponibilizado nas plataformas
+    Android, iOS e web. Seu uso deve ser projetado para que os usu\xE1rios (estudantes)
+    utilizem ele em conjunto com os professores, que poder\xE3o desenvolver atividades
+    gamificadas que podem ser acessadas pelas usu\xE1rios do aplicativo."
+  - The character that the player controls in the game of Hollow Knight.  The Knight
+    is a Vessel[1][2] born to the higher beings the Pale King and the White Lady,
+    with Void inside their shell.[3] Vessels are stated to be the progeny[4] and spawn[5]
+    of the King and Queen of Hallownest; beginning their lives born from eggs which
+    are found in an area of The Abyss known as The Birthplace.[6]  Through all references
+    and events in-game, the Knight is never once referred to with a gender. This is
+    deliberate, as Vessels are genderless beings.[7][8] This fact is made more clear
+    by Hornet being called "The Gendered Child"[9][10] leaving her to be the only
+    progeny[11] of the Pale King to have a gender.  In the Birthplace cutscene, it
+    is shown that the Knight fell back into the Abyss after it was sealed. However,
+    at the start of the game, they can be seen wandering around the Howling Cliffs
+    after being called back to Hallownest by either The Radiance or The Hollow Knight.[12]
+    It is unknown how they managed to escape from the Abyss.  The Knight's resilience
+    is born from two voids;[13] one being the Void that the Knight has within them,
+    and the other void being the area outside of Hallownest.[14] Spending time in
+    this area caused the Knight to lose their memories.[15]  Once the Knight obtains
+    Void Heart and remembers their past, they are able to unify the Void under their
+    will.[16]They acquired this ability by accepting the Void inside themselves.[17]
+    The creature in the area where the Shade Cloak refers to the Knight as the Lord
+    of Shades after they gain Void Heart.[18]  At the beginning of the game, the Knight
+    is equipped with only their Old Nail and the ability to heal themselves using
+    SOUL. Throughout the game, the Knight gains access to new powers and items to
+    help them through their journey.
+  - He named his Nail "Life Ender" because names supposedly have power. Unfortunately,
+    because it is made of shellwood, it cannot deal damage.  While he claims to be
+    the strongest warrior in the land, he is found trapped by weak enemies or claiming
+    the glory of another bug's deeds. He disregards the Knight as beneath him, and
+    accuses them of constantly getting in his way.  Found along the path leading to
+    Greenpath. He is held in the mandibles of a Vengefly King, and the player will
+    have the choice to either save him or leave him. If saved, he will complain that
+    the Knight got in the way between him and his "prey", he will introduce himself
+    and boast about his supposed mighty deeds. If he is not saved before acquiring
+    the Mantis Claw, he will die in this location.  If he is saved in Greenpath, Zote
+    will show up in Dirtmouth, where once again he will talk to the Knight in an arrogant
+    fashion.  Zote will be found in a corridor leading back to the storerooms of the
+    City of Tears. He will have forgotten the Knight and will introduce himself again.  Found
+    stuck in spider webs, presumably having been captured by the beasts of Deepnest.
+    Once again the player has the choice to either save him or leave him, though this
+    time leaving him will not result in his death. If saved he will once again complain
+    about the Knight meddling in his supposed heroics.  If the player saved him both
+    times, he will be captured and found in the resting area of the Colosseum of Fools,
+    where he will brag about his skills and how his capture was part of his plan.
+    He then becomes the final boss of the first trial. As a boss, he deals no damage
+    due to his nail being made of shellwood. He simply has to be whacked until the
+    fight is over. He is quite inept in combat and regularly messes up his jumps.
+    Beating him will reward the player with the 'Rivalry' achievement.  After defeat,
+    and after Bretta is rescued, he will return to Dirtmouth with the helmet of a
+    Shielded Fool as a supposed "trophy" and claims that he is the new champion, while
+    slandering the Knight's reputation. Bretta falls for him, her drawings and dolls
+    of the Knight replaced by a single portrait of Zote. Here he will recite "The
+    Fifty Seven Precepts Of Zote".
+  - The Radiance is a higher being of light similar to Essence[1], and as such opposed
+    to the Void, her ancient enemy. The Moth Tribe is born from her light and in return
+    revered her.[1] Unlike the individualist society of Hallownest however, the Radiance
+    offered unity to bugs at the cost of a mind incapable of thought.[2]  After the
+    Pale King arrived in Hallownest and expanded the minds of his new subjects,[3]
+    the Moth Tribe turned their backs on the Radiance and worshipped him instead.[4]
+    In doing so, the Radiance was almost entirely forgotten from the land. Yet traces
+    of her memory remained, such as a statue on Hallownest's Crown. Her memory started
+    spreading throughout the Kingdom, by then in its golden age. Soon, all of Hallownest
+    began to dream of her, appearing to them as a blazing light.[5] These dreams could
+    break the minds of bugs[6] and eventually enslave their wills to hers.[7] But
+    the King and his subjects resisted her memory, which started to manifest as the
+    Infection.[8]  The Pale King attempted to stop the Infection by sealing the Radiance
+    within a Vessel. These creatures, infused with the Void to be without a mind and
+    a will, were to be able to withstand the Radiance's influence.[9] The Hollow Knight
+    was chosen, raised and grown for that purpose. The Radiance was sealed within
+    them, and the Vessel chained within the Temple of the Black Egg. However, the
+    Pale King failed to realise the Vessel's impurities of mind.[10] Because of this,
+    the Radiance was still able to invade the dreams of bugs. She ultimately wiped
+    out the Kingdom of its inhabitants, whose King had vanished, but left the rest
+    of the land untouched.  Time passed, Hallownest turned into a myth while the Radiance
+    remained sealed. Her influence finally started to break out of the Hollow Knight.[11]
+    She reignited the full power of the Infection, threatening again the land of Hallownest[12]
+    and prompting the Knight to return to Hallownest.[13]
+  - "Before the fall of Hallownest, he used to be Monomon\u2019s apprentice. When
+    Monomon became a Dreamer, she entrusted Quirrel with her mask, which was part
+    of an additional protection enacted upon herself. Quirrel can be seen wearing
+    this mask on top of his head.  In the official comic, it is shown that Quirrel
+    ended up outside of Hallownest, causing him to lose much of his memory. He was
+    called back to Hallownest by Monomon in order to reverse the protection placed
+    on her. After entering the Howling Cliffs, Quirrel meets Hornet, whom he briefly
+    fights. Hornet allows Quirrel to enter Hallownest when she recognizes Monomon\u2019s
+    mask.  Quirrel can initially be found at the Temple of the Black Egg, but he can
+    be encountered in several locations around Hallownest. After helping the Knight
+    kill Monomon by removing the protection on her, he goes to Blue Lake to see the
+    source of the rain in the City of Tears."
+  taCerto: 

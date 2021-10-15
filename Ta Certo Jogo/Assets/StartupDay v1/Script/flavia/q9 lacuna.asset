@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6476859cb3904949b6b9597b36c20ae, type: 3}
+  m_Name: q9 lacuna
+  m_EditorClassIdentifier: 
+  _tipo: 1
+  textos:
+  - 'A '
+  - <size=150%><sprite=0></size>
+  - " \xE9 considerado uma metodologia ativa de ensino. Se bem utilizada, pode estimular
+    o protagonismo e a forma\xE7\xE3o cr\xEDtica do estudante."
+  textosStatus: 000100
+  bloco:
+  - Realidade aumentada
+  - Realidade virtual
+  blocoLugar: ffffffff01000000

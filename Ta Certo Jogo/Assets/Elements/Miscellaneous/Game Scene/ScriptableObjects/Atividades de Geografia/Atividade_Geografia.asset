@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1739e732dcc174c9901347d66ca351, type: 3}
+  m_Name: Atividade_Geografia
+  m_EditorClassIdentifier: 
+  listaQuestoes:
+  - {fileID: 11400000, guid: d9f52cc9b6d14474081176110650bdc8, type: 2}
+  - {fileID: 11400000, guid: 98356b88a6331684c8c968832e72cff5, type: 2}
+  - {fileID: 11400000, guid: 5a301af1310f4c241ba0483ec1f19c9a, type: 2}
+  - {fileID: 11400000, guid: e8bd0f4cf6dd1334fb1a689ea536cd57, type: 2}
+  - {fileID: 11400000, guid: 45f3ecd9ddf1fb945af04508b05bcc82, type: 2}
+  - {fileID: 11400000, guid: 8bad44857f4b057409e482323b99bc61, type: 2}
+  - {fileID: 11400000, guid: c65ff3012bfd61648b2954b305970835, type: 2}
+  - {fileID: 11400000, guid: 5aa4297f5d57dee489110bb6f75b18e2, type: 2}
+  - {fileID: 11400000, guid: 3179a36d6541f0a4cbc18c425b08bafd, type: 2}
+  - {fileID: 11400000, guid: 7aa774be7b6927e4cbc9ed2c0b315fb4, type: 2}

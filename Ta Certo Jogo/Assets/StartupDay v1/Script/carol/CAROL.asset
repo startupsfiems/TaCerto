@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cd67302263445f4927a157ce0b7280, type: 3}
+  m_Name: CAROL
+  m_EditorClassIdentifier: 
+  questoes:
+  - {fileID: 11400000, guid: ef0bec7ad9b134bdabf19a05539a448e, type: 2}
+  - {fileID: 11400000, guid: c0c99f8462cd040f39aef35526455e05, type: 2}
+  - {fileID: 11400000, guid: 577311b9e16e04ad78baf5fc14ba8222, type: 2}
+  - {fileID: 11400000, guid: 02a9221a8d7434fbb8261af67c76658a, type: 2}
+  - {fileID: 11400000, guid: 2237c1b2a396c47e683705be2fb79131, type: 2}
+  - {fileID: 11400000, guid: ed3763ed09bc144838996d2592373872, type: 2}
+  - {fileID: 11400000, guid: bb2565f50bc454fd6a77f1f1c66d17ec, type: 2}
+  - {fileID: 11400000, guid: e9cdaa15d5b794e9490aea3844620363, type: 2}
