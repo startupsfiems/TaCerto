@@ -11620,23 +11620,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\estagioeducacao6\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\fernando.gallardo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Perfil_estagio_educacao6\\Nova pasta (3)\\Git\\ApiTaCerto\\ApiTaCerto.csproj",
+      "projectUniqueName": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
       "projectName": "ApiTaCerto",
-      "projectPath": "D:\\Perfil_estagio_educacao6\\Nova pasta (3)\\Git\\ApiTaCerto\\ApiTaCerto.csproj",
-      "packagesPath": "C:\\Users\\estagioeducacao6\\.nuget\\packages\\",
-      "outputPath": "D:\\Perfil_estagio_educacao6\\Nova pasta (3)\\Git\\ApiTaCerto\\obj\\",
+      "projectPath": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
+      "packagesPath": "C:\\Users\\fernando.gallardo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\estagioeducacao6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fernando.gallardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11648,6 +11644,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "projectReferences": {}
         }
       },
@@ -11659,6 +11656,7 @@
     },
     "frameworks": {
       "netcoreapp2.1": {
+        "targetAlias": "netcoreapp2.1",
         "dependencies": {
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
@@ -11696,7 +11694,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

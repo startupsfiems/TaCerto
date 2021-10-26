@@ -17,3 +17,21 @@ D:\Perfil_estagio_educacao6\Nova pasta (3)\Git\ApiTaCerto\bin\Debug\netcoreapp2.
 D:\Perfil_estagio_educacao6\Nova pasta (3)\Git\ApiTaCerto\bin\Debug\netcoreapp2.1\appsettings.json
 D:\Perfil_estagio_educacao6\Nova pasta (3)\Git\ApiTaCerto\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 D:\Perfil_estagio_educacao6\Nova pasta (3)\Git\ApiTaCerto\obj\Debug\netcoreapp2.1\ApiTaCerto.genruntimeconfig.cache
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\web.config
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\ApiTaCerto.deps.json
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\ApiTaCerto.runtimeconfig.json
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\ApiTaCerto.runtimeconfig.dev.json
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\ApiTaCerto.dll
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\bin\Debug\netcoreapp2.1\ApiTaCerto.pdb
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.csprojAssemblyReference.cache
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.AssemblyInfoInputs.cache
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.AssemblyInfo.cs
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.csproj.CoreCompileInputs.cache
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.RazorAssemblyInfo.cache
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.RazorAssemblyInfo.cs
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.RazorTargetAssemblyInfo.cache
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.dll
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.pdb
+C:\Users\fernando.gallardo\Documents\GitHub\TaCerto\TaCerto API\obj\Debug\netcoreapp2.1\ApiTaCerto.genruntimeconfig.cache
