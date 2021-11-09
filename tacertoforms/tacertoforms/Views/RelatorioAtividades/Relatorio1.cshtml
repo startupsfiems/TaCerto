@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "Relatório de Atividades";
+}
+@Styles.Render("~/Content/Chart.min.css")
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Relatório de Atividades
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de boas vindas do sistema">Início</a></li>
+            <li class="active"><a href="@Url.Action("Relatorios", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de relatórios">Relatórios</a></li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning collapsed-box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Filtros</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("Relatorio1", "RelatorioAtividades", FormMethod.Get))
+                    {
+                        <div class="box-body">
+                            <div class="form-group col-xs-12 col-md-4">
+                                @Html.Label("Turma")
+                                @Html.DropDownList("IdTurma",
+                                ViewBag.turmas as SelectList,
+                                "Turma",
+                                new { @class = "form-control", @id = "turma" })
+                            </div>
+                            <div class="form-group col-xs-12 col-md-4">
+                                <div class="disciplinas">
+                                    @Html.Label("Disciplina")
+                                    @Html.DropDownList("IdDisciplina",
+                                    new SelectList(new List<String>()),
+                                    "Disciplina",
+                                    new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12 col-md-4">
+                                @Html.Label("É prova?")
+                                @Html.DropDownList("IsProva",
+                                new List<SelectListItem> {
+                                    new SelectListItem() { Text = "Todos", Value = ""},
+                                    new SelectListItem() { Text = "Sim", Value = true.ToString()},
+                                    new SelectListItem() { Text = "Não", Value = false.ToString()}
+                                },
+                                null,
+                                new { @class = "form-control" })
+                            </div>
+                        </div>
+                    }
+                    <div class="box-footer">
+                        <input type="submit" value="Filtrar" class="btn btn-warning pull-right" />
+                        <a href="@Url.Action("Relatorio1", "RelatorioAtividades")" class="btn btn-primary pull-right mr-button">Limpar filtros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Selecione a atividade</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered  table-striped table-relatorio">
+                            <thead>
+                                <tr>
+                                    <th>Atividade</th>
+                                    <th>Turma</th>
+                                    <th>Disciplina</th>
+                                    <th>Início da Atividade</th>
+                                    <th>Fim da Atividade</th>
+                                    <th>Número de Tentativas</th>
+                                    <th>É prova</th>
+                                    <th>Número de Questões</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var a in ViewBag.atividades)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.Titulo</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.nome_da_turma</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.nome_da_materia</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.DataInicio.ToString()</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.DataFim.ToString()</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.NumeroTentativas</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@(a.IsProva ? "Sim" : "Não")</a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Relatorio2", "RelatorioAtividades", new { IdAtividade = a.IdAtividade })">@a.NumeroQuestoes</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@Scripts.Render("~/Scripts/Chart/Chart.bundle.min.js")
+@Scripts.Render("~/Scripts/Chart/Chart.min.js")
+
+
+
+<script type="text/javascript">
+    $('#example1').DataTable({
+        "language": dados_translate
+    });
+    $('#periodo').daterangepicker({
+        locale: { format: 'DD/MM/YYYY' }
+    });
+
+    $('#turma').on('change', function () {
+        var IdDisciplina = new URLSearchParams(window.location.search).get('IdDisciplina');
+        $.ajax({
+            url: '@Url.Action("AjaxDisciplinas", "RelatorioAtividades")',
+            data: {
+                IdTurma: $('#turma').val(),
+                Selected: IdDisciplina
+            },
+            cache: false,
+            type: 'get',
+            success: function (data) {
+                $('.disciplinas').html(data);
+            },
+            error: function () {
+                alert('Ocorreu algum erro de conexão. Por favor, tente novamente mais tarde');
+            }
+        });
+    }).change();
+</script>
+
+
+<style>
+    div.dataTables_wrapper div.dataTables_filter { margin-right: 0 !important;}
+</style>

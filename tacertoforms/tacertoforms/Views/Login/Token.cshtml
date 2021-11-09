@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Login/_Layout.cshtml";
+    ViewBag.Title = "Login";
+}
+<div style="position: relative; height: 100vh;">
+    <img id="loginImg" src="~/Content/images/panel.png" alt="">
+    <img id="logoImg" src="~/Content/images/LOGO-ABERTURA.png" alt="">
+    <img id="cardImg" src="~/Content/images/cartaVermelhaBack.png" alt="">
+    <img id="relogioImg" src="~/Content/images/relogio_solo.png" alt="">
+    <img id="trofeuImg" src="~/Content/images/botaoTrofeu.png" alt="">
+    <img id="lacunasImg" src="~/Content/images/botaoLacunas.png" alt="">
+    <img id="certoImg" src="~/Content/images/botaoCerto.png" alt="">
+    <img id="erradoImg" src="~/Content/images/botaoErrado.png" alt="">
+    <img id="exploradorImg" src="~/Content/images/botaoExplorador.png" alt="">
+    <img id="hardcoreImg" src="~/Content/images/botaoHardcore.png" alt="">
+    <img id="jogarImg" src="~/Content/images/botaoJogar.png" alt="">
+    <img id="geloImg" src="~/Content/images/cartaAzulBack.png" alt="">
+    <img id="yellowImg" src="~/Content/images/cartaAmarelaBack.png" alt="">
+    <img id="greenImg" src="~/Content/images/cartaVerdeBack.png" alt="">
+    <img id="aurelioImg" src="~/Content/images/botaoAurelio.png" alt="">
+    <img id="randomImg" src="~/Content/images/botaoRandom.png" alt="">
+    <img id="casualImg" src="~/Content/images/menucasual.png" alt="">
+</div>
+
+<form action="/Login/Token" method="post" onsubmit="return validarSenha()">
+    <div class="container center">        
+        <div class="col s12">
+            <div id="loginForm">
+                <div class="input-field col s12">
+                    <input type="hidden" name="token" value="@Request.Params["token"]" />
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="Senha" type="text" name="Senha" />
+                    <label for="Senha">Senha</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="Resenha" type="text" name="Resenha">
+                    <label for="Resenha">Confirmação de Senha</label>
+                </div>
+                <div class="row buttonRow">
+                    <div class="input-field col s12 center">
+                        <button class="btn waves-effect waves-light" type="submit">
+                            Atualizar
+                        </button>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    var message = '@TempData["error"]';
+
+    if (message != '') {
+        M.toast({ html: message, classes: 'rounded red darken-1' });        
+        document.getElementById("loginForm").innerHTML = 'Token inválido ou expirado. Solicite novamente sua redefinição de senha.<br/>'+
+            '<a href="/Login/Index" class="esqueci-link">Voltar para tela de login</a>';      
+    }
+    function validarSenha() {
+        var senha = document.getElementById('Senha').value;
+        var resenha = document.getElementById('Resenha').value;            
+        if (senha != '' && senha != resenha) {
+            alert('A nova senha e a confirmação estão diferentes!');
+            document.getElementById('Senha').value = '';
+            document.getElementById('Resenha').value = '';            
+            document.getElementById('Senha').focus();
+            return false;
+        }
+    }
+</script>

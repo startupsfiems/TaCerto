@@ -1,0 +1,213 @@
+﻿@model TaCertoForms.Models.ViewModelDisciplina
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Edição de Disciplinas
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Voltar para a tela de boas vindas" href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> Início</a>
+            </li>
+            <li class="active">
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Listagem de disciplinas" href="@Url.Action("Index", "Disciplina")">Disciplinas</a>
+            </li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Novo Registro</h3>
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Voltar para a listagem de disciplinas" href="@Url.Action("Index", "Disciplina")" class="btn btn-sm btn-default btn-flat pull-right">Voltar</a>
+            </div>
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="box-body">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.IdDisciplina)
+
+                            <div class="form-group col-xs-12 col-md-4">
+                                @Html.Label("Disciplina")
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-xs-12 col-md-4">
+                                @Html.Label("Descrição")
+                                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-xs-12"></div>
+                            <div class="form-group col-xs-12 col-md-4">
+                                @Html.Label("Instituição")
+                                @Html.DropDownList("instituicao",
+                                ViewBag.InstituicaoList as SelectList,
+                                "Instituição",
+                                new { @class = "form-control", @id = "instituicao-select", @name = "instituicao" })
+
+                            </div>
+                            <div class="form-group col-xs-12 col-md-4">
+                                <div class="turmas-select">
+                                    @Html.Label("Turma")
+                                    @Html.DropDownList("Turma",
+                                    new SelectList(new List<String>()),
+                                    "Turma",
+                                    new { @class = "form-control", @empty = "Turma", @name = "TurmaDisciplina", @id = "turma-disciplina-default" })
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12 col-md-8">
+                                <button data-toggle="tooltip" data-placement="bottom" data-original-title="Vincular turma a disciplina" class="btn btn-flat btn-success pull-right" href="javascript:void(0)" id="btn-vincular-turma">Vincular</button>
+                            </div>
+                            <div class="form-group col-xs-12 col-md-8">
+                                <div class="turmas-disciplinas"></div>
+                            </div>
+                        </div>
+                    </div>                                        
+                </div>
+                <div class="box-footer">
+                    <input data-toggle="tooltip" data-placement="bottom" data-original-title="Atualizar disciplinas"  type="submit" value="Salvar" class="btn btn-primary pull-right" />
+                </div>
+            }
+        </div>
+    </section>
+</div>   
+
+
+<script>
+    $(document).ready(function () {
+        function validacoes() {
+            if ($('#instituicao-select').val() == '') {
+                alert('Por favor, selecione uma instituição');
+                return false;
+            }
+            if (typeof $('#turmas-select-disciplinas') !== 'undefined' && $('#turmas-select-disciplinas').val() == '') {
+                alert('Por favor, selecione uma turma');
+                return false;
+            }
+            var table = document.getElementById("tdturmasdisciplinas");            
+            var dados_disciplinas = Array();
+            for (var i = 1; i < table.rows.length; i++) {
+                if (table.rows[i].cells.length > 1) {
+                    dados_disciplinas.push(table.rows[i].cells[0].innerHTML + ';' + table.rows[i].cells[1].innerHTML);
+                }
+            }
+            //Validando se o usuário está tentando realizar um vínculo a uma instituição que não é permitido            
+            if (dados_disciplinas.length > 0) {                
+                var current_instituicao = dados_disciplinas[0].split(';')[0];
+                if (current_instituicao != $('#instituicao-select option:selected').text()) {
+                    alert('Você não pode realizar o vínculo a uma instituição diferente!')
+                    return false;
+                }
+            }    
+
+            //Validando se o usuário está tentando adicionar uma turma e disciplina que já foi inserida            
+            var current_selection = $('#instituicao-select option:selected').text() + ';' + $('#turmas-select-disciplinas option:selected').text();
+            if(dados_disciplinas.indexOf(current_selection) != -1) {
+                alert('Você já realizou este vínculo!');
+                return false;
+            }
+            return true;
+        }
+
+       //Funcão responsável por buscar turmas da instituição
+       function atualizar_turmas(IdInstituicao, scope) {
+            $.ajax({
+                url: '@Url.Action("AjaxTurmas", "Turma")',
+                data: {
+                    IdInstituicao: IdInstituicao,
+                    scope: scope
+                },
+                cache: false,
+                dataType: 'html',
+                success: function (data) {                    
+                   $('.turmas-select').html(data);
+                },
+                error: function () {
+                    alert('Ocorreu algum erro de conexão. Por favor, tente novamente mais tarde');
+                }
+            });
+       }
+
+       //Capturando change da instituição para carregar o ajax de turmas
+       $('#instituicao-select').on('change', function () {
+          if($(this).val() != '')
+            atualizar_turmas($(this).val(), "disciplinas");
+          else
+            $('#turmas-select-autor').find('option').remove().end().append('<option value="">Turma</option>').val('');
+       }).change();        
+
+        async function atualizar_turmas_disciplinas() {
+            await $.ajax({
+                url: '@Url.Action("AjaxTurmasDisciplinas", "Disciplina")',
+                data: {
+                    IdDisciplina: "@Html.Raw(Model.IdDisciplina)"
+                },
+                cache: false,
+                success: function (data) {
+                    $('.turmas-disciplinas').html(data);
+                },
+                error: function () {
+                    alert('Ocorreu algum erro de conexão. Por favor, tente novamente mais tarde');
+                }
+            });
+        }
+        atualizar_turmas_disciplinas();
+
+        function salvar_turma(IdDisciplina, IdTurma) {
+            $.ajax({
+                url: '@Url.Action("SalvarTurmaDisciplina", "Disciplina")',
+                data: {
+                    IdDisciplina: IdDisciplina,
+                    IdTurma: IdTurma
+                },
+                cache: false,
+                type: 'post',
+                success: function () {
+                    atualizar_turmas_disciplinas();
+                },
+                error: function () {
+                    alert('Ocorreu algum erro de conexão. Por favor, tente novamente mais tarde');
+                }
+            });
+        }
+
+        $('#btn-vincular-turma').on('click', function (e) {
+            e.preventDefault();
+            var IdTurma = $('#turmas-select-disciplinas').val();
+            if(validacoes())                        
+                salvar_turma("@Html.Raw(Model.IdDisciplina)", IdTurma);
+        });
+
+        $('.turmas-disciplinas').on('click', '.btn-remover-td', function () {            
+            $.ajax({
+                url: '@Url.Action("AjaxDesvincularDisciplinaTurma", "Disciplina")',
+                data: {
+                    id: $(this).attr('idtd')
+                },
+                cache: false,
+                type: 'post',
+                success: function (data) {                                                    
+                    if (data.code == 200) {
+                        atualizar_turmas_disciplinas();
+                    } else {
+                        alert(data.message);
+                    }
+                },
+                error: function () {
+                    alert('Ocorreu algum erro de conexão. Por favor, tente novamente mais tarde');
+                }
+            });
+        });
+    });
+</script>

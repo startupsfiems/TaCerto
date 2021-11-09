@@ -1,0 +1,306 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+@Styles.Render("~/Content/Chart.min.css")
+@Scripts.Render("~/Scripts/Chart/Chart.bundle.min.js")
+@Scripts.Render("~/Scripts/Chart/Chart.min.js")
+@Scripts.Render("~/Scripts/Chart/Utils.chart.js")
+<div class="content-wrapper relatorios-admin">
+    <section class="content-header">        
+        <h1>Dashboard</h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de boas vindas do sistema">Início</a></li>
+            <li class="active"><a href="@Url.Action("Relatorios", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de relatórios">Relatórios</a></li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning collapsed-box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Filtros</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("Relatorio1", "RelatorioAtividades", FormMethod.Get))
+                    {
+                    <div class="box-body">                       
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-md-6">
+                                @Html.Label("Instituição")
+                                @Html.DropDownList("flag",
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem() { Text = "Todas", Value = "True"},
+                                    new SelectListItem() { Text = ViewBag.NomeInstituicao, Value = "False"}
+                                },
+                                null,
+                                new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <div class="box-footer">
+                        <input type="submit" value="Filtrar" class="btn btn-warning pull-right" />
+                        <a href="@Url.Action(" Relatorio1", "RelatorioAtividades" )" class="btn btn-primary pull-right mr-button">Limpar filtros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="small-box bg-azul-escuro">
+                            <div class="inner">
+                                <h3>@ViewBag.MediaTotalDeAtividadesLancadasPorProfessor</h3>
+                                <p>Média total de atividades lançadas por professor</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-tachometer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="small-box bg-azul-escuro">
+                            <div class="inner">
+                                <h3>@ViewBag.MediaDeAtividadePorProfessorNaUltimaSemana</h3>
+                                <p>Média de Atividade por professor na última semana</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h3>@ViewBag.MediaDeNotasPorAluno</h3>
+                                <p>Média de notas por aluno</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h3>@ViewBag.MediaDeAtividadeRealizadasPorAluno</h3>
+                                <p>Média de Atividade realizadas por aluno</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h3>@ViewBag.MediaDeAtividadesAlunoNaUltimaSemana</h3>
+                                <p>Média de atividades aluno na última semana</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-line-chart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-xs-12">
+                        <div class="small-box bg-red">
+                            <div class="inner">
+                                <h3>@ViewBag.MediaDeNotaDaEscola</h3>
+                                <p>Média de nota da escola</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-home"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>            
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-danger">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Alunos Agrupados por Média</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="content">
+                                    <div class="cl-height"><canvas id="chart-0"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Professores</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="professores-table" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Professor</th>
+                                    <th>Qtd. de atividades desenvolvidas</th>
+                                    <th>Qtd. total de acessos na plataforma</th>
+                                    <th>Dt última atividade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var a in ViewBag.ListaAcessoProfessor)
+                                {
+                                <tr>
+                                    <td>@a.nome</td>
+                                    <td>@a.numero_acesso</td>
+                                    <td>@a.atividades_desenvolvidas</td>
+                                    <td>@a.ultimo_acesso_string</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Alunos</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="alunos-table" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Aluno</th>
+                                    <th>Qtd. atividades desenvolvidas</th>
+                                    <th>Qtd. acessos na plataforma</th>
+                                    <th>Dt. última atividade realizada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var a in ViewBag.ListaAcessoAluno)
+                                {
+                                    <tr>
+                                        <td>@a.nome</td>
+                                        <td>@a.numero_acesso</td>
+                                        <td>@a.atividades_desenvolvidas</td>
+                                        <td>@a.ultimo_acesso_string</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    $('#professores-table').DataTable({ "language": dados_translate });
+    $('#alunos-table').DataTable({ "language": dados_translate });
+</script>
+
+<script>
+    var dataArray = [
+        @foreach(var a in ViewBag.AlunosPorNota)
+        {
+            @a
+            @Html.Raw(",")
+        }
+    ];
+    var presets = window.chartColors;
+    var utils = Samples.utils;
+    var inputs = {
+        min: 0,
+        max: 10,
+        count: dataArray.length,
+        continuity: 1
+    };
+
+    function generateLabels(config) {
+        return utils.months(Chart.helpers.merge({
+            count: inputs.count,
+            section: 3
+        }, config || {}));
+    }
+
+    var options = {
+        maintainAspectRatio: false,
+        spanGaps: false,
+        elements: {
+            line: {
+                tension: 0.000001
+            }
+        },
+        plugins: {
+            filler: {
+                propagate: false
+            }
+        },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    autoSkip: false,
+                    maxRotation: 0
+                }
+            }]
+        }
+    };
+
+    new Chart('chart-0', {
+        type: 'bar',
+        data: {
+            labels: ['< 3','< 6','< 7','< 8','< 10','10'],//generateLabels(),
+            datasets: [{
+                backgroundColor: utils.transparentize(presets.red),
+                borderColor: presets.red,
+                data: dataArray,
+                label: 'Número de alunos',
+                fill: false
+            }]
+        },
+        options: Chart.helpers.merge(options, {
+            title: {
+                text: 'Agrupamento de alunos por média',
+                display: true
+            }
+        })
+    });
+</script>
+
+<style>
+    .cl-height{height: 280px;}
+</style>
+
+
+

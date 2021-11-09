@@ -1,0 +1,10 @@
+﻿@{
+    Layout = null;
+    string nome_turma = "turma" + ViewBag.Scope;
+}
+
+@Html.Label("Turma")
+@Html.DropDownList(nome_turma,
+ViewBag.TurmasList as SelectList,
+"Turma",
+new { @class = "form-control", @id = "turmas-select-" + ViewBag.Scope, @name = "teste"})

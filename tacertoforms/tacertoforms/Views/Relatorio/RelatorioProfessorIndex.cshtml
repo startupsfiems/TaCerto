@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Relatórios";
+}
+
+@Styles.Render("~/Content/Chart.min.css")
+<div class="content-wrapper">    
+    <section class="content-header">
+        <h1>Relatórios</h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de boas vindas do sistema">Início</a></li>
+            <li class="active"><a href="@Url.Action("Relatorios", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de relatórios">Relatórios</a></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>@Html.Raw(ViewBag.TotalAtividades)</h3>
+
+                        <p>Relatório de Atividades</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-document"></i>
+                    </div>
+                    <a href="@Url.Action("Relatorio1", "RelatorioAtividades")" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-orange">
+                    <div class="inner">
+                        <h3>@Html.Raw(ViewBag.TotalAcessos)</h3>
+
+                        <p>Relatório de Acessos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-power"></i>
+                    </div>
+                    <a href="@Url.Action("Relatorio1", "RelatorioAcesso")" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

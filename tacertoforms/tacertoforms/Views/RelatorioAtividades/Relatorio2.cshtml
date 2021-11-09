@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "Relatório de Notas de Alunos";
+}
+@Styles.Render("~/Content/Chart.min.css")
+@Scripts.Render("~/Scripts/Chart/Utils.chart.js")
+@Scripts.Render("~/Scripts/Chart/Chart.bundle.min.js")
+@Scripts.Render("~/Scripts/Chart/Chart.min.js")
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Relatório de Notas</h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de boas vindas do sistema">Início</a></li>
+            <li class="active"><a href="@Url.Action("Relatorios", "Home")" data-toggle="tooltip" data-placement="bottom" data-original-title="Acesso a tela de relatórios">Relatórios</a></li>
+        </ol>
+    </section>
+    <section class="content relatorios">
+        <div class="row">
+            <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>@ViewBag.atividade.nome_da_turma</h3>
+                        <p>Turma</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>@ViewBag.atividade.nome_da_materia</h3>
+                        <p>Disciplina</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-file-o"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>@ViewBag.atividade.media_nota.ToString("N2")</h3>
+                        <p>Média da Turma</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-tags"></i>
+                    </div>
+                </div>
+            </div>         
+            <div class="col-md-8">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Relatório de notas de alunos</h3>                        
+                    </div>
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Aluno</th>
+                                    <th>Número de Tentativas</th>
+                                    <th>Maior Nota</th>
+                                    <th>Menor Tempo</th>
+                                    <th>Maior Tempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var a in ViewBag.alunos)
+                                {
+                                    <tr>
+                                        <td>@a.nome_aluno</td>
+                                        <td>@a.NumeroTentativas</td>
+                                        <td>@a.MaiorNota.ToString("N2")</td>
+                                        <td>@a.menor_tempo</td>
+                                        <td>@a.maior_tempo</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Média da turma</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div id="canvas-holder">
+                            <canvas id="chart-area"></canvas>
+                            <div class="row">
+                                <div class="col-md-4 mt20">
+                                    @Html.Label("Média da escola")
+                                    @Html.TextBox("Media", 6, new { @class = "form-control", @type = "number", @step = ".1", @min = "1", @id = "media", @value = "6.0" })                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    //Media = .replace(".", ",")
+    var flagPrimeiraVez = true;
+    function AtualizarMedia() {
+        var media = parseInt(document.getElementById("media").value);
+        var acimaDaMedia = 0;
+        for(var i=0; i<notas.length; i++)
+            if(notas[i] >= media) acimaDaMedia++;
+        
+        config.data.datasets[0].data[0] = acimaDaMedia;
+        config.data.datasets[0].data[1] = notas.length - acimaDaMedia;
+
+        var ctx = document.getElementById('chart-area').getContext('2d');
+        console.log(window.myPie);
+        if(flagPrimeiraVez){
+            window.myPie = new Chart(ctx, config);
+            flagPrimeiraVez = false;
+        }
+        else{
+            window.myPie.destroy();
+            window.myPie = new Chart(ctx, config);
+            //window.myPie.set("data", config.data, true);
+        }
+        window.myPie.render();
+    };
+
+    $('#example1').DataTable({
+        "language": dados_translate
+    });
+
+    var notas =  [
+        @foreach(var a in ViewBag.alunos)
+        {
+            @Html.Raw("parseFloat('")
+            @a.MaiorNota
+            @Html.Raw("'),")
+        }
+    ];
+
+    var config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    8.0,
+                    2.0
+                ],
+                backgroundColor: [
+                    window.chartColors.blue,
+                    window.chartColors.red
+                ]
+            }],
+            labels: [
+                'Acima da média',
+                'Abaixo da média'
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    };
+
+    window.onload = ()=>{ AtualizarMedia();};
+    document.getElementById("media").onchange = ()=>{AtualizarMedia()};
+</script>
+
+<style>
+    div.dataTables_wrapper div.dataTables_filter {
+        margin-right: 0 !important;
+    }
+</style>

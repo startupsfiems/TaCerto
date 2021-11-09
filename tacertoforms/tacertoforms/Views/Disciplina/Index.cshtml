@@ -1,0 +1,107 @@
+﻿@model IEnumerable<TaCertoForms.Models.ViewModelDisciplina>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Disciplinas
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Voltar para a tela de boas vindas" href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> Início</a>
+            </li>
+            <li class="active">
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Listagem de disciplinas" href="@Url.Action("Index", "Disciplina")">Disciplinas</a>
+            </li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="alert-message"></div>
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Cadastro de uma nova disciplina" href="@Url.Action("Create", "Disciplina")" class="btn-cadastro btn btn-sm btn-primary btn-flat pull-right">Novo registro</a>
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Disciplina
+                            </th>
+                            <th>
+                                Turmas
+                            </th>
+                            <th>
+                                Descrição
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
+                                <td>
+                                    @if (item.Turmas.Count > 0)
+                                    {
+                                        for (var i = 0; i < item.Turmas.Count; i++)
+                                        {
+
+                                            @Html.Raw(item.Turmas[i].Serie)
+                                            if (i != item.Turmas.Count - 1)
+                                            {
+                                                @Html.Raw("   |   ");
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw("(Nenhuma turma foi vinculada ainda)")
+                                    }
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Descricao)
+                                </td>
+                                <td>
+                                    <a data-toggle="tooltip" data-placement="bottom" data-original-title="Editar informações da disciplina" href="@Url.Action("Edit", "Disciplina", new { id = item.IdDisciplina })" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                                    @*<a href="@Url.Action("Delete", "Disciplina", new { id = item.IdDisciplina })" class="btn btn-danger btn-xs"><i class="fa fa-remove"></i></a>*@
+                                </td>
+                            </tr>
+                            @*
+                            <tr></tr>
+                            <tr style="display: none;">
+                                <td colspan="3">
+                                    <span style="font-weight: bold;">Turmas</span> <br>
+                                    @foreach (var turma in item.Turmas){
+                                        @turma.Serie <br>
+                                    }
+                                </td>
+                            </tr>
+                            *@
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </section>
+</div>
+
+<script type="text/javascript">
+    $('#example1').DataTable({
+        "language": dados_translate,
+         "columnDefs": [{
+            "targets": 3,
+            "orderable": false
+        }]
+    });
+</script>

@@ -1,0 +1,9 @@
+﻿@{
+    Layout = null;
+}
+
+@Html.Label("Disciplina")
+@Html.DropDownList("IdDisciplina",
+ViewBag.Disciplinas as SelectList,
+"Disciplina",
+new { @class = "form-control"})

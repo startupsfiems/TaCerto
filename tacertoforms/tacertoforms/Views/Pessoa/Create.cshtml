@@ -1,0 +1,93 @@
+﻿@model TaCertoForms.Models.Pessoa
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Cadastro de Usuário
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Voltar para a tela de boas vindas" href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> Início</a>
+            </li>
+            <li class="active">
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Listagem de usuários" href="@Url.Action("Index", "Pessoa")">Usuários</a>
+            </li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Novo Registro</h3>
+                <a href="@Url.Action("Index", "Pessoa")" class="btn btn-sm btn-default btn-flat pull-right">Voltar</a>
+            </div>
+
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new {enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="box-body">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group col-xs-12 col-md-3">
+                                @Html.Label("Perfil")
+                                @Html.EnumDropDownListFor(model => model.Perfil, htmlAttributes: new { @class = "form-control", @required = "required" })
+                            </div>
+
+                            <div class="form-group col-xs-12 col-md-3">
+                                @Html.Label("Nome")
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-xs-12 col-md-3">
+                                @Html.Label("CPF")
+                                @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control cpf", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.CPF, "Por favor, forneça um CPF válido.", new { @class = "help-block" })
+                            </div>
+
+                            <div class="form-group col-xs-12 col-md-3">
+                                @Html.Label("Email")
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @type = "email", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-xs-12 col-md-3">
+                                @Html.Label("Senha")
+                                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-xs-12 col-md-3">
+                                @Html.Label("Instituição")
+                                @Html.DropDownListFor(model => model.IdInstituicao, ViewBag.InstituicaoList as SelectList, "Instituição", new { @class = "form-control", @required = "required" })
+                                @Html.ValidationMessageFor(model => model.IdInstituicao, "", new { @class = "error" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <input type="submit" value="Salvar" class="btn btn-primary pull-right" />
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+<script>
+    $('.cpf').inputmask("999.999.999-99");
+    $('.cpf').on('blur', function () {            
+        var value = $('.cpf').val(); 
+        if (value != '') {
+            if (!valida_cpf(value) || value == '11111111111' || value == '22222222222' || value == '33333333333' || value == '44444444444' || value == '55555555555' || value == '66666666666' || value == '77777777777' || value == '88888888888' || value == '99999999999' || value == '00000000000') {
+                $(this).val('');
+                mensagensValidacao(false, $(this).parents('.form-group'), "CPF Inválido.");
+            } else {
+                mensagensValidacao(true, $(this).parents('.form-group'));                    
+            }
+        }
+    });
+</script>

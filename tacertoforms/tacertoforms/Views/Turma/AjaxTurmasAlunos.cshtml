@@ -1,0 +1,74 @@
+﻿@model IEnumerable<TaCertoForms.Models.ViewModelPessoa>
+@{
+    Layout = null;
+}
+
+<div class="table-responsive">
+    <div class="alert-message"></div>
+    <table class="table no-margin" id="turma-aluno-td">
+        <thead>
+            <tr>
+                <th>Turma</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (@Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                    foreach (var turma in item.Turma)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => turma.Serie)</td>
+                            <td>
+                                <a href="javascript:void(0)" idta="@Html.DisplayFor(modelItem => item.IdTurmaAluno)" class="btn-remover-ta btn btn-warning btn-xs" title="Desvincular"><i class="fa fa-unlink"></i></a>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center">Nenhum vínculo foi realizado!</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<input type="hidden" id="success-a" value="@TempData["success"]" />
+<input type="hidden" id="info-a" value="@TempData["info"]" />
+<input type="hidden" id="warning-a" value="@TempData["warning"]" />
+<input type="hidden" id="error-a" value="@TempData["error"]" />
+
+<script>
+    
+        var displayMessage = function (message, msgType) {
+            $('.alert-message').html(
+                '<div class="alert alert-' + msgType + ' alert-dismissible alert-return">' +
+                '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'
+                + message +
+                '</div>'
+            );
+            setTimeout(function () {
+                $('.alert-return').alert('close');
+            }, 6000);
+        };
+
+        if ($('#success-a').val()) {
+            displayMessage($('#success-a').val(), 'success');
+        }
+        if ($('#info-a').val()) {
+            displayMessage($('#info-a').val(), 'info');
+        }
+        if ($('#warning-a').val()) {
+            displayMessage($('#warning-a').val(), 'warning');
+        }
+        if ($('#error-a').val()) {
+            displayMessage($('#error-a').val(), 'error');
+        }    
+</script>
+

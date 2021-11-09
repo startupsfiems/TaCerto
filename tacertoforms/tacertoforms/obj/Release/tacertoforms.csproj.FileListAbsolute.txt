@@ -1,0 +1,317 @@
+V:\tacertoforms\tacertoforms\bin\tacertoforms.dll.config
+V:\tacertoforms\tacertoforms\bin\tacertoforms.dll
+V:\tacertoforms\tacertoforms\bin\tacertoforms.pdb
+V:\tacertoforms\tacertoforms\bin\Antlr3.Runtime.dll
+V:\tacertoforms\tacertoforms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+V:\tacertoforms\tacertoforms\bin\Microsoft.Web.Infrastructure.dll
+V:\tacertoforms\tacertoforms\bin\Newtonsoft.Json.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.Helpers.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.Mvc.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.Optimization.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.Razor.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.WebPages.Deployment.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.WebPages.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.WebPages.Razor.dll
+V:\tacertoforms\tacertoforms\bin\WebGrease.dll
+V:\tacertoforms\tacertoforms\bin\System.Web.Helpers.xml
+V:\tacertoforms\tacertoforms\bin\System.Web.Mvc.xml
+V:\tacertoforms\tacertoforms\bin\System.Web.Optimization.xml
+V:\tacertoforms\tacertoforms\bin\System.Web.Razor.xml
+V:\tacertoforms\tacertoforms\bin\System.Web.WebPages.xml
+V:\tacertoforms\tacertoforms\bin\System.Web.WebPages.Deployment.xml
+V:\tacertoforms\tacertoforms\bin\System.Web.WebPages.Razor.xml
+V:\tacertoforms\tacertoforms\bin\Newtonsoft.Json.xml
+V:\tacertoforms\tacertoforms\bin\Antlr3.Runtime.pdb
+V:\tacertoforms\tacertoforms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+V:\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.CoreCompileInputs.cache
+V:\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.CopyComplete
+V:\tacertoforms\tacertoforms\obj\Release\tacertoforms.dll
+V:\tacertoforms\tacertoforms\obj\Release\tacertoforms.pdb
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\tacertoforms.dll.config
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\tacertoforms.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\tacertoforms.pdb
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\csc.exe
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\csc.exe.config
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\csc.rsp
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\csi.exe
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\csi.exe.config
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\csi.rsp
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CSharp.Core.targets
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.Managed.Core.targets
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.AppContext.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Collections.Immutable.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Console.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Diagnostics.StackTrace.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.IO.Compression.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.IO.FileSystem.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.IO.FileSystem.Primitives.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.IO.Pipes.AccessControl.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.IO.Pipes.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Reflection.Metadata.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.AccessControl.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.Claims.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Encoding.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Primitives.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Security.Principal.Windows.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Text.Encoding.CodePages.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.ValueTuple.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Xml.ReaderWriter.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XmlDocument.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XPath.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XPath.XDocument.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\vbc.exe
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\vbc.exe.config
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\vbc.rsp
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\VBCSCompiler.exe
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\roslyn\VBCSCompiler.exe.config
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Antlr3.Runtime.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Microsoft.Web.Infrastructure.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Newtonsoft.Json.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Helpers.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Mvc.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Optimization.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Razor.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.WebPages.Deployment.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.WebPages.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.WebPages.Razor.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\WebGrease.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Helpers.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Mvc.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Optimization.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.Razor.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.WebPages.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.WebPages.Deployment.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\System.Web.WebPages.Razor.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Newtonsoft.Json.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Antlr3.Runtime.pdb
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\obj\Release\tacertoforms.csprojAssemblyReference.cache
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.CoreCompileInputs.cache
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.CopyComplete
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\obj\Release\tacertoforms.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\obj\Release\tacertoforms.pdb
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\EntityFramework.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\EntityFramework.SqlServer.dll
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\EntityFramework.xml
+\\srv-website3\startupjogos.sesims.com.br\tacertoforms\tacertoforms\bin\EntityFramework.SqlServer.xml
+V:\tacertoforms\tacertoforms\bin\EntityFramework.dll
+V:\tacertoforms\tacertoforms\bin\EntityFramework.SqlServer.dll
+V:\tacertoforms\tacertoforms\bin\EntityFramework.xml
+V:\tacertoforms\tacertoforms\bin\EntityFramework.SqlServer.xml
+V:\tacertoforms\tacertoforms\bin\roslyn\csc.exe
+V:\tacertoforms\tacertoforms\bin\roslyn\csc.exe.config
+V:\tacertoforms\tacertoforms\bin\roslyn\csc.rsp
+V:\tacertoforms\tacertoforms\bin\roslyn\csi.exe
+V:\tacertoforms\tacertoforms\bin\roslyn\csi.exe.config
+V:\tacertoforms\tacertoforms\bin\roslyn\csi.rsp
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CSharp.Core.targets
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.Managed.Core.targets
+V:\tacertoforms\tacertoforms\bin\roslyn\Microsoft.VisualBasic.Core.targets
+V:\tacertoforms\tacertoforms\bin\roslyn\System.AppContext.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Collections.Immutable.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Console.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Diagnostics.StackTrace.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.IO.Compression.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.IO.FileSystem.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.IO.FileSystem.Primitives.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.IO.Pipes.AccessControl.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.IO.Pipes.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Reflection.Metadata.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.AccessControl.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.Claims.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Encoding.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Primitives.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Security.Principal.Windows.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Text.Encoding.CodePages.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.ValueTuple.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Xml.ReaderWriter.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XmlDocument.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XPath.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XPath.XDocument.dll
+V:\tacertoforms\tacertoforms\bin\roslyn\vbc.exe
+V:\tacertoforms\tacertoforms\bin\roslyn\vbc.exe.config
+V:\tacertoforms\tacertoforms\bin\roslyn\vbc.rsp
+V:\tacertoforms\tacertoforms\bin\roslyn\VBCSCompiler.exe
+V:\tacertoforms\tacertoforms\bin\roslyn\VBCSCompiler.exe.config
+V:\tacertoforms\tacertoforms\obj\Release\tacertoforms.csprojAssemblyReference.cache
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\grpc_csharp_ext.x86.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\grpc_csharp_ext.x64.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\libgrpc_csharp_ext.x86.so
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\libgrpc_csharp_ext.x64.so
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\libgrpc_csharp_ext.x86.dylib
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\libgrpc_csharp_ext.x64.dylib
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\tacertoforms.dll.config
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\tacertoforms.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\tacertoforms.pdb
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\csc.exe
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\csc.exe.config
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\csc.rsp
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\csi.exe
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\csi.exe.config
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\csi.rsp
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.CSharp.Core.targets
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.Managed.Core.targets
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\Microsoft.VisualBasic.Core.targets
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.AppContext.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Collections.Immutable.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Console.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Diagnostics.StackTrace.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.IO.Compression.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.IO.FileSystem.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.IO.FileSystem.Primitives.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.IO.Pipes.AccessControl.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.IO.Pipes.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Reflection.Metadata.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.AccessControl.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.Claims.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Encoding.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.Primitives.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Security.Principal.Windows.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Text.Encoding.CodePages.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.ValueTuple.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Xml.ReaderWriter.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XmlDocument.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XPath.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\System.Xml.XPath.XDocument.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\vbc.exe
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\vbc.exe.config
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\vbc.rsp
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\VBCSCompiler.exe
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\roslyn\VBCSCompiler.exe.config
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Antlr3.Runtime.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\EntityFramework.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\EntityFramework.SqlServer.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Grpc.Core.Api.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Grpc.Core.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Primitives.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Net.Http.Headers.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Web.Infrastructure.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Newtonsoft.Json.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Buffers.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Memory.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Numerics.Vectors.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Runtime.CompilerServices.Unsafe.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Helpers.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Mvc.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Optimization.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Razor.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.WebPages.Deployment.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.WebPages.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.WebPages.Razor.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\WebGrease.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\EntityFramework.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\EntityFramework.SqlServer.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Grpc.Core.pdb
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Grpc.Core.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Grpc.Core.Api.pdb
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Grpc.Core.Api.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Primitives.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Net.Http.Headers.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Buffers.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Memory.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Numerics.Vectors.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Runtime.CompilerServices.Unsafe.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Helpers.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Mvc.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Optimization.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.Razor.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.WebPages.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.WebPages.Deployment.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Web.WebPages.Razor.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Newtonsoft.Json.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Antlr3.Runtime.pdb
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.csprojAssemblyReference.cache
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.CoreCompileInputs.cache
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.CopyComplete
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.pdb
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.Primeiramigration.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.matriz.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.matriz2.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.DisciplinaIdMatriz.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.DisciplinaIdMatrizconstraint.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.Atividadenome.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.Atividadenometitulo.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.RespostaAluno.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.atividade_numero_questoes.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.csproj.GenerateResource.cache
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.rgbdisciplina.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\obj\Release\tacertoforms.Migrations.rgdcor2.resources
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Bcl.AsyncInterfaces.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Bcl.HashCode.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.Design.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.Relational.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Caching.Abstractions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Caching.Memory.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Configuration.Binder.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Configuration.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.DependencyInjection.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Logging.Abstractions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Logging.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Options.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Collections.Immutable.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.ComponentModel.Annotations.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Diagnostics.DiagnosticSource.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Threading.Tasks.Extensions.dll
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Bcl.AsyncInterfaces.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Bcl.HashCode.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.Design.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.EntityFrameworkCore.Relational.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Caching.Abstractions.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Caching.Memory.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Configuration.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Configuration.Binder.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.DependencyInjection.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Logging.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Logging.Abstractions.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\Microsoft.Extensions.Options.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Collections.Immutable.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Diagnostics.DiagnosticSource.xml
+d:\Perfil\lucas.barque\Desktop\Ta Certo\tacertoforms\tacertoforms\bin\System.Threading.Tasks.Extensions.xml

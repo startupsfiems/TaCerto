@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Login/_Layout.cshtml";
+    ViewBag.Title = "Login";
+}
+<div style="position: relative; height: 100vh;">
+    <img id="loginImg" src="~/Content/images/panel.png" alt="">
+    <img id="logoImg" src="~/Content/images/LOGO-ABERTURA.png" alt="">
+    <img id="cardImg" src="~/Content/images/cartaVermelhaBack.png" alt="">
+    <img id="relogioImg" src="~/Content/images/relogio_solo.png" alt="">
+    <img id="trofeuImg" src="~/Content/images/botaoTrofeu.png" alt="">
+    <img id="lacunasImg" src="~/Content/images/botaoLacunas.png" alt="">
+    <img id="certoImg" src="~/Content/images/botaoCerto.png" alt="">
+    <img id="erradoImg" src="~/Content/images/botaoErrado.png" alt="">
+    <img id="exploradorImg" src="~/Content/images/botaoExplorador.png" alt="">
+    <img id="hardcoreImg" src="~/Content/images/botaoHardcore.png" alt="">
+    <img id="jogarImg" src="~/Content/images/botaoJogar.png" alt="">
+    <img id="geloImg" src="~/Content/images/cartaAzulBack.png" alt="">
+    <img id="yellowImg" src="~/Content/images/cartaAmarelaBack.png" alt="">
+    <img id="greenImg" src="~/Content/images/cartaVerdeBack.png" alt="">
+    <img id="aurelioImg" src="~/Content/images/botaoAurelio.png" alt="">
+    <img id="randomImg" src="~/Content/images/botaoRandom.png" alt="">
+    <img id="casualImg" src="~/Content/images/menucasual.png" alt="">
+</div>
+<form action="/Login/EsqueciSenha" method="post">
+    <div id="loginForm" class="container center alteracao-senha">
+        <p class="mensagem-senha">Insira o seu e-mail e enviaremos um link para você voltar a acessar a sua conta.</p>
+        <div class="col s12">
+            <div class="row emailRow">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="email" type="email" name="email">
+                    <label for="email">E-mail</label>
+                </div>
+            </div>
+            <div class="row buttonRow">
+                <div class="input-field col s12 center">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    var message = Array();
+    message.success = '@TempData["success"]';
+    message.error = '@TempData["error"]';
+    
+    if (message.success != '') {
+        M.toast({ html: message.success, classes: 'rounded green darken-1' });
+        document.getElementById("loginForm").innerHTML = "Enviamos um e-mail com as orientações de redefinição de senha. No prazo de 24h sua redefinição de senha será expirada.";
+    } 
+    if (message.error != '') {        
+        M.toast({ html: message.error, classes: 'rounded red darken-1' });
+    } 
+</script>

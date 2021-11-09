@@ -1,0 +1,47 @@
+@model TaCertoForms.Models.ViewModelAtividade
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="row">
+            @using (Html.BeginForm())
+            {
+                @Html.TextBox("IdQuestao", null, new { @id = "tabela-de-colunaIdQuestao", @type = "hidden" })
+                @*<div class="form-group col-xs-12">
+                @Html.Label("Título")
+                @Html.TextBox("Titulo_coluna", null, new { @class = "form-control", @id = "tabela-de-colunaTitulo" })
+            </div>
+                *@
+                <div class="form-group col-xs-12" data-toggle="tooltip" data-placement="bottom" data-original-title="Será apresentado para o aluno quando for resolver a questão">
+                    @Html.Label("Enunciado")
+                    @Html.TextArea("Enunciado", null, new { @class = "form-control", @id = "tabela-de-colunaEnunciado" })
+                </div>
+                <div class="form-group col-xs-12" data-toggle="tooltip" data-placement="bottom" data-original-title="Valor proporcional da nota baseado na soma total dos pesos. OBS: Todas as atividades cadastradas terão o valor de 100%, o peso da nota definido em cada questão definirá qual a porcentagem representará na soma total">
+                    @Html.Label("Peso Nota")
+                    @Html.TextBox("PesoNota", null, new { @class = "form-control", @type = "number", @step = ".01", @min = "1", @id = "tabela-de-colunaPesoNota" })
+                </div>
+                <div id="tabela-de-colunaDivImagem" class="div-image"></div>
+                <div class="form-group col-xs-12" data-toggle="tooltip" data-placement="bottom" data-original-title="Quantidade de linhas para associação">
+                    @Html.Label("Número de linhas")
+                    @Html.TextBox("NumeroLinhas", "0", new { @class = "form-control", @type = "number", @id = "tabela-de-colunaNumeroLinhas" })
+                </div>
+                <div class="linhas-input" id="ID_COLUNAS"></div>
+
+                <div class="form-group col-xs-12">
+                    <input data-toggle="tooltip" data-placement="bottom" data-original-title="Após clicar no botão a questão estará cadastrada em nosso sistema" type="button" value="Adicionar" class="btn btn-success" onclick="AddQuestao('tabela-de-coluna')" />
+                </div>
+            }
+        </div>
+            </div>
+    <div class="col-xs-12 col-md-6">
+        <table id="tabela-de-coluna" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    @*<th>Título</th>*@
+                    <th>Enunciado</th>
+                    <th>Peso Nota</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
