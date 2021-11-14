@@ -6,10 +6,10 @@ using ApiTaCerto.Repositorio;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -38,16 +38,16 @@ namespace ApiTaCerto
                 options.AddPolicy("AllowMyOrigin", builder => builder.WithOrigins("http://startuphomolog.sesims.com.br"));
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo{ Title = "Api Tá Certo", Version = "v1"});
             });
 
             services.AddAuthentication(options => {
-                options.DefaultAuthenticateScheme = "bearer";
-                options.DefaultChallengeScheme = "bearer";
-            }).AddJwtBearer("bearer", options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => {
                     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters{
                         ValidateIssuer = true,
                         ValidateAudience = true,
@@ -74,7 +74,7 @@ namespace ApiTaCerto
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -94,8 +94,6 @@ namespace ApiTaCerto
             app.UseCors("AllowMyOrigin");
 
             app.UseAuthentication();
-
-            app.UseMvc();
         }
     }
 }

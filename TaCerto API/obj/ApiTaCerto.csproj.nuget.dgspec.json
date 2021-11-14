@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {}
+    "C:\\Users\\vagner.martins\\Documents\\Projetos\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {
+    "C:\\Users\\vagner.martins\\Documents\\Projetos\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
+        "projectUniqueName": "C:\\Users\\vagner.martins\\Documents\\Projetos\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
         "projectName": "ApiTaCerto",
-        "projectPath": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
-        "packagesPath": "C:\\Users\\fernando.gallardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\obj\\",
+        "projectPath": "C:\\Users\\vagner.martins\\Documents\\Projetos\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
+        "packagesPath": "C:\\Users\\vagner.martins\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vagner.martins\\Documents\\Projetos\\TaCerto\\TaCerto API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fernando.gallardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vagner.martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
-            "targetAlias": "netcoreapp2.1",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,29 +37,30 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
-          "targetAlias": "netcoreapp2.1",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[2.1.1, )",
-              "autoReferenced": true
+              "version": "[3.1.21, )"
             },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "suppressParent": "All",
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[3.1.21, )"
             },
-            "Microsoft.NETCore.App": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
-              "autoReferenced": true
+              "version": "[3.1.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.21, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.6.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -76,6 +77,14 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
