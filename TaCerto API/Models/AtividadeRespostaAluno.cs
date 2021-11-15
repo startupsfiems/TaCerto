@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using ApiTaCerto.Models.Usuario;
 using Newtonsoft.Json;
 
 namespace ApiTaCerto.Models
@@ -9,13 +10,13 @@ namespace ApiTaCerto.Models
     {
         [Key]
         public int IdAtividadeRespostaAluno { get; set; }
-        [Required]
         public int IdAtividade { get; set; }
-        [Required]
         public int IdPessoa { get; set; }
-        [Required]
         public DateTime DataEnvio { get; set; }
-        [Required]
         public float Nota { get; set; }
+
+        //NAVIGATION PROPERTY
+        public Atividade Atividade { get; set; }
+        public Pessoa Pessoa { get; set; }
     }
 }

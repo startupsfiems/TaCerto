@@ -17,5 +17,7 @@ namespace ApiTaCerto.Models
         public bool IsProva { get; set; }
         public string Titulo { get; set; }
         public int NumeroQuestoes { get; set; }
+        // NAVIGATION PROPERTY
+        public TurmaDisciplinaAutor TurmaDisciplinaAutor { get; set; }
     }
 }

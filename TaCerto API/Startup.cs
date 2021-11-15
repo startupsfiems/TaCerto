@@ -18,6 +18,8 @@ namespace ApiTaCerto
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,11 +36,21 @@ namespace ApiTaCerto
             services.AddTransient<IAtividadeRepository, AtividadeRepository>();
             services.AddTransient<IMidiaRepository, MidiaRepository>();
 
-            services.AddCors(options => {
-                options.AddPolicy("AllowMyOrigin", builder => builder.WithOrigins("http://startuphomolog.sesims.com.br"));
+            services.AddCors(options => 
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
             });
 
             services.AddMvc();
+
+            services.AddControllers();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo{ Title = "Api Tá Certo", Version = "v1"});
@@ -81,19 +93,25 @@ namespace ApiTaCerto
                 app.UseDeveloperExceptionPage();
                 IdentityModelEventSource.ShowPII = true; 
             }
-            else
-            {
-                app.UseHsts();
-            }
+
+            app.UseHttpsRedirection();
 
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Tá Certo V1");
             });
 
-            app.UseCors("AllowMyOrigin");
+            app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

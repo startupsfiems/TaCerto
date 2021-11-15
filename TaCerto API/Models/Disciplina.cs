@@ -9,12 +9,17 @@ namespace ApiTaCerto.Models
     {
         [Key]
         public int IdDisciplina { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
         public int IdMatriz { get; set; }
-        public int? CorR { get; set; }
-        public int? CorG { get; set; }
-        public int? CorB { get; set; }
-        public int? CorA { get; set; }
+        [MaxLength(150)]
+        public string Nome { get; set; }
+        [MaxLength(150)]
+        public string Descricao { get; set; }
+        public int? CorR;
+        public int? CorG;
+        public int? CorB;
+        public int? CorA;
+
+        //NAVIGATION PROPERTY
+        public Instituicao Matriz { get; set; }
     }
 }

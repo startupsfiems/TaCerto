@@ -10,7 +10,7 @@ namespace ApiTaCerto.Models.Usuario
     {
         [Key]
         public int IdPessoaToken { get; set; }
-        [MaxLength(50)]
+        [MaxLength(512)]
         public string Token { get; set; }
         [MaxLength(50)]
         public string Message { get; set; }

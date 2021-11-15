@@ -11,6 +11,10 @@ namespace ApiTaCerto.Models
         public int NumAcerto { get; set; }
         public int NumErro { get; set; }
         public string JsonReposta { get; set; }
-        public double Nota { get; set; }
+        public float Nota { get; set; }
+
+        //NAVIGATION PROPERTY
+        public AtividadeRespostaAluno AtividadeRespostaAluno { get; set; }
+        public Questao Questao { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace ApiTaCerto.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("TaCerto")
                 .HasAnnotation("ProductVersion", "3.1.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -50,9 +51,14 @@ namespace ApiTaCerto.Migrations
                     b.Property<string>("Titulo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("TurmaDisciplinaAutorIdTurmaDisciplinaAutor")
+                        .HasColumnType("int");
+
                     b.HasKey("IdAtividade");
 
-                    b.ToTable("Atividades");
+                    b.HasIndex("TurmaDisciplinaAutorIdTurmaDisciplinaAutor");
+
+                    b.ToTable("Atividade");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.AtividadeAluno", b =>
@@ -61,6 +67,9 @@ namespace ApiTaCerto.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AtividadeIdAtividade")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdAtividade")
                         .HasColumnType("int");
@@ -80,9 +89,16 @@ namespace ApiTaCerto.Migrations
                     b.Property<int>("NumeroTentativas")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PessoaIdPessoa")
+                        .HasColumnType("int");
+
                     b.HasKey("IdAtividadeAluno");
 
-                    b.ToTable("AtividadeAlunos");
+                    b.HasIndex("AtividadeIdAtividade");
+
+                    b.HasIndex("PessoaIdPessoa");
+
+                    b.ToTable("AtividadeAluno");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.AtividadeRespostaAluno", b =>
@@ -91,6 +107,9 @@ namespace ApiTaCerto.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AtividadeIdAtividade")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DataEnvio")
                         .HasColumnType("datetime2");
@@ -104,9 +123,16 @@ namespace ApiTaCerto.Migrations
                     b.Property<float>("Nota")
                         .HasColumnType("real");
 
+                    b.Property<int?>("PessoaIdPessoa")
+                        .HasColumnType("int");
+
                     b.HasKey("IdAtividadeRespostaAluno");
 
-                    b.ToTable("AtividadeRespostaAlunos");
+                    b.HasIndex("AtividadeIdAtividade");
+
+                    b.HasIndex("PessoaIdPessoa");
+
+                    b.ToTable("AtividadeRespostaAluno");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Disciplina", b =>
@@ -116,30 +142,25 @@ namespace ApiTaCerto.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CorA")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CorB")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CorG")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CorR")
-                        .HasColumnType("int");
-
                     b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("IdMatriz")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MatrizIdInstituicao")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.HasKey("IdDisciplina");
 
-                    b.ToTable("Disciplinas");
+                    b.HasIndex("MatrizIdInstituicao");
+
+                    b.ToTable("Disciplina");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.DisciplinaTurma", b =>
@@ -149,15 +170,68 @@ namespace ApiTaCerto.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("DisciplinaIdDisciplina")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdDisciplina")
                         .HasColumnType("int");
 
                     b.Property<int>("IdTurma")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TurmaIdTurma")
+                        .HasColumnType("int");
+
                     b.HasKey("IdDisciplinaTurma");
 
-                    b.ToTable("DisciplinaTurmas");
+                    b.HasIndex("DisciplinaIdDisciplina");
+
+                    b.HasIndex("TurmaIdTurma");
+
+                    b.ToTable("DisciplinaTurma");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Endereco", b =>
+                {
+                    b.Property<int>("IdEndereco")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("CEP")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("Complemento")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Pais")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("UF")
+                        .HasColumnType("nvarchar(2)")
+                        .HasMaxLength(2);
+
+                    b.HasKey("IdEndereco");
+
+                    b.ToTable("Endereco");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Instituicao", b =>
@@ -168,11 +242,55 @@ namespace ApiTaCerto.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CNPJ")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(18)")
+                        .HasMaxLength(18);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<int?>("EnderecoCobrancaIdEndereco")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EnderecoPrincipalIdEndereco")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEnderecoCobranca")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEnderecoPrincipal")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IdMatriz")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsMatriz")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("MatrizIdInstituicao")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomeFantasia")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("RazaoSocial")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
 
                     b.HasKey("IdInstituicao");
 
-                    b.ToTable("Instituicoes");
+                    b.HasIndex("EnderecoCobrancaIdEndereco");
+
+                    b.HasIndex("EnderecoPrincipalIdEndereco");
+
+                    b.HasIndex("MatrizIdInstituicao");
+
+                    b.ToTable("Instituicao");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.LogLogin", b =>
@@ -199,13 +317,18 @@ namespace ApiTaCerto.Migrations
                     b.Property<int>("Origem")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PessoaIdPessoa")
+                        .HasColumnType("int");
+
                     b.Property<string>("Plataforma")
                         .HasColumnType("nvarchar(150)")
                         .HasMaxLength(150);
 
                     b.HasKey("IdLogLogin");
 
-                    b.ToTable("logLogins");
+                    b.HasIndex("PessoaIdPessoa");
+
+                    b.ToTable("LogLogin");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Questao", b =>
@@ -214,6 +337,9 @@ namespace ApiTaCerto.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AtividadeIdAtividade")
+                        .HasColumnType("int");
 
                     b.Property<string>("Enunciado")
                         .HasColumnType("nvarchar(max)");
@@ -230,12 +356,19 @@ namespace ApiTaCerto.Migrations
                     b.Property<float>("PesoNota")
                         .HasColumnType("real");
 
+                    b.Property<int?>("TipoQuestaoIdTipoQuestao")
+                        .HasColumnType("int");
+
                     b.Property<string>("Titulo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdQuestao");
 
-                    b.ToTable("Questoes");
+                    b.HasIndex("AtividadeIdAtividade");
+
+                    b.HasIndex("TipoQuestaoIdTipoQuestao");
+
+                    b.ToTable("Questao");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.QuestaoRespostaAluno", b =>
@@ -244,6 +377,9 @@ namespace ApiTaCerto.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AtividadeRespostaAlunoIdAtividadeRespostaAluno")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdAtividadeRespostaAluno")
                         .HasColumnType("int");
@@ -254,8 +390,8 @@ namespace ApiTaCerto.Migrations
                     b.Property<string>("JsonReposta")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Nota")
-                        .HasColumnType("float");
+                    b.Property<float>("Nota")
+                        .HasColumnType("real");
 
                     b.Property<int>("NumAcerto")
                         .HasColumnType("int");
@@ -263,9 +399,35 @@ namespace ApiTaCerto.Migrations
                     b.Property<int>("NumErro")
                         .HasColumnType("int");
 
+                    b.Property<int?>("QuestaoIdQuestao")
+                        .HasColumnType("int");
+
                     b.HasKey("IdQuestaoRespostaAluno");
 
-                    b.ToTable("QuestaoRespostaAlunos");
+                    b.HasIndex("AtividadeRespostaAlunoIdAtividadeRespostaAluno");
+
+                    b.HasIndex("QuestaoIdQuestao");
+
+                    b.ToTable("QuestaoRespostaAluno");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.TipoQuestao", b =>
+                {
+                    b.Property<int>("IdTipoQuestao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.HasKey("IdTipoQuestao");
+
+                    b.ToTable("TipoQuestao");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Turma", b =>
@@ -278,6 +440,9 @@ namespace ApiTaCerto.Migrations
                     b.Property<int>("IdInstituicao")
                         .HasColumnType("int");
 
+                    b.Property<int?>("InstituicaoIdInstituicao")
+                        .HasColumnType("int");
+
                     b.Property<int>("Periodo")
                         .HasColumnType("int");
 
@@ -286,7 +451,9 @@ namespace ApiTaCerto.Migrations
 
                     b.HasKey("IdTurma");
 
-                    b.ToTable("Turmas");
+                    b.HasIndex("InstituicaoIdInstituicao");
+
+                    b.ToTable("Turma");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.TurmaAluno", b =>
@@ -302,9 +469,47 @@ namespace ApiTaCerto.Migrations
                     b.Property<int>("IdTurma")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PessoaIdPessoa")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TurmaIdTurma")
+                        .HasColumnType("int");
+
                     b.HasKey("IdTurmaAluno");
 
-                    b.ToTable("TurmaAlunos");
+                    b.HasIndex("PessoaIdPessoa");
+
+                    b.HasIndex("TurmaIdTurma");
+
+                    b.ToTable("TurmaAluno");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.TurmaDisciplinaAutor", b =>
+                {
+                    b.Property<int>("IdTurmaDisciplinaAutor")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AutorIdPessoa")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DisciplinaTurmaIdDisciplinaTurma")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdAutor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdDisciplinaTurma")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdTurmaDisciplinaAutor");
+
+                    b.HasIndex("AutorIdPessoa");
+
+                    b.HasIndex("DisciplinaTurmaIdDisciplinaTurma");
+
+                    b.ToTable("TurmaDisciplinaAutor");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Usuario.Midia", b =>
@@ -314,26 +519,30 @@ namespace ApiTaCerto.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Extensao")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<string>("Filename")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("IdOrigem")
                         .HasColumnType("int");
 
                     b.Property<string>("Link")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<string>("Tabela")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("Tipo")
                         .HasColumnType("int");
 
                     b.HasKey("IdMidia");
 
-                    b.ToTable("Midias");
+                    b.ToTable("Midia");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Usuario.Pessoa", b =>
@@ -343,27 +552,42 @@ namespace ApiTaCerto.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Cpf")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("CPF")
+                        .HasColumnType("nvarchar(14)")
+                        .HasMaxLength(14);
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("IdInstituicao")
                         .HasColumnType("int");
 
+                    b.Property<int?>("InstituicaoIdInstituicao")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("Perfil")
                         .HasColumnType("int");
 
                     b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("TokenDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("IdPessoa");
 
-                    b.ToTable("Pessoas");
+                    b.HasIndex("InstituicaoIdInstituicao");
+
+                    b.ToTable("Pessoa");
                 });
 
             modelBuilder.Entity("ApiTaCerto.Models.Usuario.PessoaToken", b =>
@@ -384,12 +608,139 @@ namespace ApiTaCerto.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Token")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(512)")
+                        .HasMaxLength(512);
 
                     b.HasKey("IdPessoaToken");
 
                     b.ToTable("PessoaToken");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Atividade", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.TurmaDisciplinaAutor", "TurmaDisciplinaAutor")
+                        .WithMany()
+                        .HasForeignKey("TurmaDisciplinaAutorIdTurmaDisciplinaAutor");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.AtividadeAluno", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Atividade", "Atividade")
+                        .WithMany()
+                        .HasForeignKey("AtividadeIdAtividade");
+
+                    b.HasOne("ApiTaCerto.Models.Usuario.Pessoa", "Pessoa")
+                        .WithMany()
+                        .HasForeignKey("PessoaIdPessoa");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.AtividadeRespostaAluno", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Atividade", "Atividade")
+                        .WithMany()
+                        .HasForeignKey("AtividadeIdAtividade");
+
+                    b.HasOne("ApiTaCerto.Models.Usuario.Pessoa", "Pessoa")
+                        .WithMany()
+                        .HasForeignKey("PessoaIdPessoa");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Disciplina", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Instituicao", "Matriz")
+                        .WithMany()
+                        .HasForeignKey("MatrizIdInstituicao");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.DisciplinaTurma", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Disciplina", "Disciplina")
+                        .WithMany()
+                        .HasForeignKey("DisciplinaIdDisciplina");
+
+                    b.HasOne("ApiTaCerto.Models.Turma", "Turma")
+                        .WithMany()
+                        .HasForeignKey("TurmaIdTurma");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Instituicao", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Endereco", "EnderecoCobranca")
+                        .WithMany()
+                        .HasForeignKey("EnderecoCobrancaIdEndereco");
+
+                    b.HasOne("ApiTaCerto.Models.Endereco", "EnderecoPrincipal")
+                        .WithMany()
+                        .HasForeignKey("EnderecoPrincipalIdEndereco");
+
+                    b.HasOne("ApiTaCerto.Models.Instituicao", "Matriz")
+                        .WithMany()
+                        .HasForeignKey("MatrizIdInstituicao");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.LogLogin", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Usuario.Pessoa", "Pessoa")
+                        .WithMany()
+                        .HasForeignKey("PessoaIdPessoa");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Questao", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Atividade", "Atividade")
+                        .WithMany()
+                        .HasForeignKey("AtividadeIdAtividade");
+
+                    b.HasOne("ApiTaCerto.Models.TipoQuestao", "TipoQuestao")
+                        .WithMany()
+                        .HasForeignKey("TipoQuestaoIdTipoQuestao");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.QuestaoRespostaAluno", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.AtividadeRespostaAluno", "AtividadeRespostaAluno")
+                        .WithMany()
+                        .HasForeignKey("AtividadeRespostaAlunoIdAtividadeRespostaAluno");
+
+                    b.HasOne("ApiTaCerto.Models.Questao", "Questao")
+                        .WithMany()
+                        .HasForeignKey("QuestaoIdQuestao");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Turma", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Instituicao", "Instituicao")
+                        .WithMany()
+                        .HasForeignKey("InstituicaoIdInstituicao");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.TurmaAluno", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Usuario.Pessoa", "Pessoa")
+                        .WithMany()
+                        .HasForeignKey("PessoaIdPessoa");
+
+                    b.HasOne("ApiTaCerto.Models.Turma", "Turma")
+                        .WithMany()
+                        .HasForeignKey("TurmaIdTurma");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.TurmaDisciplinaAutor", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Usuario.Pessoa", "Autor")
+                        .WithMany()
+                        .HasForeignKey("AutorIdPessoa");
+
+                    b.HasOne("ApiTaCerto.Models.DisciplinaTurma", "DisciplinaTurma")
+                        .WithMany()
+                        .HasForeignKey("DisciplinaTurmaIdDisciplinaTurma");
+                });
+
+            modelBuilder.Entity("ApiTaCerto.Models.Usuario.Pessoa", b =>
+                {
+                    b.HasOne("ApiTaCerto.Models.Instituicao", "Instituicao")
+                        .WithMany()
+                        .HasForeignKey("InstituicaoIdInstituicao");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,7 +14,7 @@ namespace ApiTaCerto.Repositorio
 
         public Midia FindMidia(int idOrigem, string tabela)
         {
-            return _contexto.Midias.FirstOrDefault(midia => midia.IdOrigem == idOrigem && 
+            return _contexto.Midia.FirstOrDefault(midia => midia.IdOrigem == idOrigem && 
             midia.Tabela == tabela);
         }
     }

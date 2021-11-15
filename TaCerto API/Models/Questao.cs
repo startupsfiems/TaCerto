@@ -15,5 +15,9 @@ namespace ApiTaCerto.Models
         public string Enunciado { get; set; }
         public string JsonQuestao { get; set; }
         public float PesoNota { get; set; }
+
+        //NAVIGATION PROPERTY
+        public Atividade Atividade { get; set; }
+        public TipoQuestao TipoQuestao { get; set; }
     }
 }

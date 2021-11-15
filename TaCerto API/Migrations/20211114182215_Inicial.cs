@@ -3,46 +3,16 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApiTaCerto.Migrations
 {
-    public partial class CriaTabelas : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "AtividadeAlunos",
-                columns: table => new
-                {
-                    IdAtividadeAluno = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    NumeroTentativas = table.Column<int>(nullable: false),
-                    MaiorNota = table.Column<double>(nullable: false),
-                    MenorTempo = table.Column<int>(nullable: false),
-                    MaiorTempo = table.Column<int>(nullable: false),
-                    IdPessoa = table.Column<int>(nullable: false),
-                    IdAtividade = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AtividadeAlunos", x => x.IdAtividadeAluno);
-                });
+            migrationBuilder.EnsureSchema(
+                name: "TaCerto");
 
             migrationBuilder.CreateTable(
-                name: "AtividadeRespostaAlunos",
-                columns: table => new
-                {
-                    IdAtividadeRespostaAluno = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdAtividade = table.Column<int>(nullable: false),
-                    IdPessoa = table.Column<int>(nullable: false),
-                    DataEnvio = table.Column<DateTime>(nullable: false),
-                    Nota = table.Column<float>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AtividadeRespostaAlunos", x => x.IdAtividadeRespostaAluno);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Atividades",
+                name: "Atividade",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdAtividade = table.Column<int>(nullable: false)
@@ -58,11 +28,48 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Atividades", x => x.IdAtividade);
+                    table.PrimaryKey("PK_Atividade", x => x.IdAtividade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Disciplinas",
+                name: "AtividadeAluno",
+                schema: "TaCerto",
+                columns: table => new
+                {
+                    IdAtividadeAluno = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NumeroTentativas = table.Column<int>(nullable: false),
+                    MaiorNota = table.Column<double>(nullable: false),
+                    MenorTempo = table.Column<int>(nullable: false),
+                    MaiorTempo = table.Column<int>(nullable: false),
+                    IdPessoa = table.Column<int>(nullable: false),
+                    IdAtividade = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AtividadeAluno", x => x.IdAtividadeAluno);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AtividadeRespostaAluno",
+                schema: "TaCerto",
+                columns: table => new
+                {
+                    IdAtividadeRespostaAluno = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdAtividade = table.Column<int>(nullable: false),
+                    IdPessoa = table.Column<int>(nullable: false),
+                    DataEnvio = table.Column<DateTime>(nullable: false),
+                    Nota = table.Column<float>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AtividadeRespostaAluno", x => x.IdAtividadeRespostaAluno);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Disciplina",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdDisciplina = table.Column<int>(nullable: false)
@@ -77,11 +84,12 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Disciplinas", x => x.IdDisciplina);
+                    table.PrimaryKey("PK_Disciplina", x => x.IdDisciplina);
                 });
 
             migrationBuilder.CreateTable(
-                name: "DisciplinaTurmas",
+                name: "DisciplinaTurma",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdDisciplinaTurma = table.Column<int>(nullable: false)
@@ -91,11 +99,12 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DisciplinaTurmas", x => x.IdDisciplinaTurma);
+                    table.PrimaryKey("PK_DisciplinaTurma", x => x.IdDisciplinaTurma);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Instituicoes",
+                name: "Instituicao",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdInstituicao = table.Column<int>(nullable: false)
@@ -104,11 +113,12 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Instituicoes", x => x.IdInstituicao);
+                    table.PrimaryKey("PK_Instituicao", x => x.IdInstituicao);
                 });
 
             migrationBuilder.CreateTable(
-                name: "logLogins",
+                name: "LogLogin",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdLogLogin = table.Column<int>(nullable: false)
@@ -122,11 +132,12 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_logLogins", x => x.IdLogLogin);
+                    table.PrimaryKey("PK_LogLogin", x => x.IdLogLogin);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Midias",
+                name: "Midia",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdMidia = table.Column<Guid>(nullable: false),
@@ -139,11 +150,12 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Midias", x => x.IdMidia);
+                    table.PrimaryKey("PK_Midia", x => x.IdMidia);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Pessoas",
+                name: "Pessoa",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdPessoa = table.Column<int>(nullable: false)
@@ -157,11 +169,12 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pessoas", x => x.IdPessoa);
+                    table.PrimaryKey("PK_Pessoa", x => x.IdPessoa);
                 });
 
             migrationBuilder.CreateTable(
                 name: "PessoaToken",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdPessoaToken = table.Column<int>(nullable: false)
@@ -177,25 +190,8 @@ namespace ApiTaCerto.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "QuestaoRespostaAlunos",
-                columns: table => new
-                {
-                    IdQuestaoRespostaAluno = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdAtividadeRespostaAluno = table.Column<int>(nullable: false),
-                    IdQuestao = table.Column<int>(nullable: false),
-                    NumAcerto = table.Column<int>(nullable: false),
-                    NumErro = table.Column<int>(nullable: false),
-                    JsonReposta = table.Column<string>(nullable: true),
-                    Nota = table.Column<double>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_QuestaoRespostaAlunos", x => x.IdQuestaoRespostaAluno);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Questoes",
+                name: "Questao",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdQuestao = table.Column<int>(nullable: false)
@@ -209,25 +205,31 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Questoes", x => x.IdQuestao);
+                    table.PrimaryKey("PK_Questao", x => x.IdQuestao);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TurmaAlunos",
+                name: "QuestaoRespostaAluno",
+                schema: "TaCerto",
                 columns: table => new
                 {
-                    IdTurmaAluno = table.Column<int>(nullable: false)
+                    IdQuestaoRespostaAluno = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdTurma = table.Column<int>(nullable: false),
-                    IdPessoa = table.Column<int>(nullable: false)
+                    IdAtividadeRespostaAluno = table.Column<int>(nullable: false),
+                    IdQuestao = table.Column<int>(nullable: false),
+                    NumAcerto = table.Column<int>(nullable: false),
+                    NumErro = table.Column<int>(nullable: false),
+                    JsonReposta = table.Column<string>(nullable: true),
+                    Nota = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TurmaAlunos", x => x.IdTurmaAluno);
+                    table.PrimaryKey("PK_QuestaoRespostaAluno", x => x.IdQuestaoRespostaAluno);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Turmas",
+                name: "Turma",
+                schema: "TaCerto",
                 columns: table => new
                 {
                     IdTurma = table.Column<int>(nullable: false)
@@ -238,53 +240,82 @@ namespace ApiTaCerto.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Turmas", x => x.IdTurma);
+                    table.PrimaryKey("PK_Turma", x => x.IdTurma);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TurmaAluno",
+                schema: "TaCerto",
+                columns: table => new
+                {
+                    IdTurmaAluno = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdTurma = table.Column<int>(nullable: false),
+                    IdPessoa = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TurmaAluno", x => x.IdTurmaAluno);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AtividadeAlunos");
+                name: "Atividade",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "AtividadeRespostaAlunos");
+                name: "AtividadeAluno",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Atividades");
+                name: "AtividadeRespostaAluno",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Disciplinas");
+                name: "Disciplina",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "DisciplinaTurmas");
+                name: "DisciplinaTurma",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Instituicoes");
+                name: "Instituicao",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "logLogins");
+                name: "LogLogin",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Midias");
+                name: "Midia",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Pessoas");
+                name: "Pessoa",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "PessoaToken");
+                name: "PessoaToken",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "QuestaoRespostaAlunos");
+                name: "Questao",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Questoes");
+                name: "QuestaoRespostaAluno",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "TurmaAlunos");
+                name: "Turma",
+                schema: "TaCerto");
 
             migrationBuilder.DropTable(
-                name: "Turmas");
+                name: "TurmaAluno",
+                schema: "TaCerto");
         }
     }
 }
