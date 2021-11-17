@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-
 namespace ApiTaCerto.Models
 {
     public class AtividadeDisciplina

@@ -8,7 +8,7 @@ namespace ApiTaCerto.Models.Usuario
         public DbSet<PessoaToken> PessoaToken { get; set; }
         public DbSet<Disciplina> Disciplina { get; set; }
         public DbSet<Instituicao> Instituicao { get; set; }
-        //public DbSet<AtividadeDisciplina> AtividadeDisciplinas { get; set; }
+        public DbSet<AtividadeDisciplina> AtividadeDisciplinas { get; set; }
         public DbSet<Atividade> Atividade { get; set; }
         public DbSet<Questao> Questao { get; set; }
         public DbSet<TurmaAluno> TurmaAluno { get; set; }
@@ -45,53 +45,56 @@ namespace ApiTaCerto.Models.Usuario
         // Define as chaves de algumas tabelas específicas
         private void DefineChaves(ModelBuilder modelBuilder)
         {
-           /* // ProdutoCidade
-            modelBuilder.Entity<ProdutoCidade>()
-                .HasKey(pc => new { pc.ProdutoId, pc.CidadeId });
 
-            // ProdutoVenda
-            modelBuilder.Entity<ProdutoVenda>()
-                .HasKey(pv => new { pv.ProdutoId, pv.VendaId });
+            modelBuilder.Entity<AtividadeDisciplina>()
+            .HasKey(ad => new { ad.IdAtividade, ad.IdTurmaDisciplinaAutor, ad.IdDisciplina });
+            /* // ProdutoCidade
+             modelBuilder.Entity<ProdutoCidade>()
+                 .HasKey(pc => new { pc.ProdutoId, pc.CidadeId });
 
-            // CursoArea
-            modelBuilder.Entity<CursoArea>()
-                .HasKey(ca => new { ca.CursoId, ca.AreaDeDesenvolvimentoId });
+             // ProdutoVenda
+             modelBuilder.Entity<ProdutoVenda>()
+                 .HasKey(pv => new { pv.ProdutoId, pv.VendaId });
 
-            // ProdutoCupom
-            modelBuilder.Entity<ProdutoCupom>()
-                .HasKey(pc => new { pc.ProdutoId, pc.CupomId});
+             // CursoArea
+             modelBuilder.Entity<CursoArea>()
+                 .HasKey(ca => new { ca.CursoId, ca.AreaDeDesenvolvimentoId });
 
-            // RespondenteExternoAtividadeResposta
-            modelBuilder.Entity<RespondenteExternoAtividadeResposta>()
-                .HasKey(rear => new { rear.AtividadeRespostaId, rear.RespondenteExternoId });
+             // ProdutoCupom
+             modelBuilder.Entity<ProdutoCupom>()
+                 .HasKey(pc => new { pc.ProdutoId, pc.CupomId});
 
-            // LoginInstituicao
-            modelBuilder.Entity<LoginInstituicao>()
-                .HasKey(ui => new { ui.LoginId, ui.InstituicaoId });
+             // RespondenteExternoAtividadeResposta
+             modelBuilder.Entity<RespondenteExternoAtividadeResposta>()
+                 .HasKey(rear => new { rear.AtividadeRespostaId, rear.RespondenteExternoId });
 
-            // UsuarioTurma
-            modelBuilder.Entity<UsuarioTurma>()
-                .HasKey(ut => new { ut.LoginId, ut.TurmaId });
+             // LoginInstituicao
+             modelBuilder.Entity<LoginInstituicao>()
+                 .HasKey(ui => new { ui.LoginId, ui.InstituicaoId });
 
-            // UsuarioEvento
-            modelBuilder.Entity<UsuarioEvento>()
-                .HasKey(uv => new { uv.LoginId, uv.EventoId });
+             // UsuarioTurma
+             modelBuilder.Entity<UsuarioTurma>()
+                 .HasKey(ut => new { ut.LoginId, ut.TurmaId });
 
-            // QuestaoTag
-            modelBuilder.Entity<QuestaoTag>()
-                .HasKey(qt => new { qt.QuestaoId, qt.TagId });
+             // UsuarioEvento
+             modelBuilder.Entity<UsuarioEvento>()
+                 .HasKey(uv => new { uv.LoginId, uv.EventoId });
 
-            // TagArea
-            modelBuilder.Entity<TagArea>()
-                .HasKey(ta => new { ta.TagId, ta.AreaId });
+             // QuestaoTag
+             modelBuilder.Entity<QuestaoTag>()
+                 .HasKey(qt => new { qt.QuestaoId, qt.TagId });
 
-            // DiagnosticoRespostas
-            modelBuilder.Entity<DiagnosticoResposta>()
-                .HasKey(dr => new { dr.EtapaDiagnosticoId, dr.AtividadeRespostaId });
+             // TagArea
+             modelBuilder.Entity<TagArea>()
+                 .HasKey(ta => new { ta.TagId, ta.AreaId });
 
-            // InstituicaoOrigem
-            modelBuilder.Entity<InstituicaoOrigem>()
-                .HasKey(ir => new { ir.InstituicaoId, ir.OrigemId });*/
+             // DiagnosticoRespostas
+             modelBuilder.Entity<DiagnosticoResposta>()
+                 .HasKey(dr => new { dr.EtapaDiagnosticoId, dr.AtividadeRespostaId });
+
+             // InstituicaoOrigem
+             modelBuilder.Entity<InstituicaoOrigem>()
+                 .HasKey(ir => new { ir.InstituicaoId, ir.OrigemId });*/
         }
 
 

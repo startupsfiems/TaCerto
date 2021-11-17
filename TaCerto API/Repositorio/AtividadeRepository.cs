@@ -41,8 +41,7 @@ namespace ApiTaCerto.Repositorio
         }
 
         public IEnumerable<AtividadeDisciplina> GetAllClassActivities(long idDisciplina){ 
-            //return _contexto.AtividadeDisciplinas.Where(ad => ad.IdDisciplina == idDisciplina).ToList();
-            return null;
+            return _contexto.AtividadeDisciplinas.Where(ad => ad.IdDisciplina == idDisciplina).ToList();
         }
 
         public IEnumerable<Atividade> GetAllActivities(long idDisciplinaAutor){
