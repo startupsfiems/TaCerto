@@ -15,7 +15,11 @@ namespace TaCertoForms.Models {
         public int MaiorTempo { get; set; }
 
         //NAVIGATION PROPERTY
+        [ForeignKey("Pessoa")]
+        public int? PessoaIdPessoa { get; set; }
         public Pessoa Pessoa { get; set; }
+        [ForeignKey("Atividade")]
+        public int? AtividadeIdAtividade { get; set; }
         public Atividade Atividade { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace TaCertoForms.Factory {
         public Pessoa FindPessoa(int? id) {
             if(id == null) return null;
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(id);
+            Pessoa pessoa = db.Pessoas.Find(id);
             if(pessoa == null) return null;
             Instituicao instituicao = db.Instituicao.Find(pessoa.IdInstituicao);
             if(instituicao == null) return null;
@@ -34,7 +34,7 @@ namespace TaCertoForms.Factory {
             idAuxList = new List<int>();
             foreach(var i in instituicaoList) idAuxList.Add(i.IdInstituicao);
 
-            List<Pessoa> pessoaList = db.Pessoa.Where(p => idAuxList.Contains(p.IdInstituicao)).ToList();
+            List<Pessoa> pessoaList = db.Pessoas.Where(p => idAuxList.Contains(p.IdInstituicao)).ToList();
             if(pessoaList == null || pessoaList.Count == 0) return null;
 
             db.Dispose();
@@ -53,7 +53,7 @@ namespace TaCertoForms.Factory {
                 pessoa.Senha = generateHash(pessoa.Senha);
             }
 
-            db.Pessoa.Add(pessoa);
+            db.Pessoas.Add(pessoa);
             db.SaveChanges();
             return pessoa;
         }
@@ -61,7 +61,7 @@ namespace TaCertoForms.Factory {
         public Pessoa EditPessoa(Pessoa pessoa) {
             Context db = new Context();
 
-            Pessoa pessoa_aux = db.Pessoa.Find(pessoa.IdPessoa);
+            Pessoa pessoa_aux = db.Pessoas.Find(pessoa.IdPessoa);
 
             if (pessoa_aux == null) return null;
 
@@ -86,7 +86,7 @@ namespace TaCertoForms.Factory {
         public bool DeletePessoa(int? id) {
             if(id == null) return false;
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(id);
+            Pessoa pessoa = db.Pessoas.Find(id);
             if(pessoa == null) return false;
 
             Instituicao instituicao = db.Instituicao.Find(pessoa.IdInstituicao);
@@ -94,7 +94,7 @@ namespace TaCertoForms.Factory {
             if(instituicao.IdInstituicao != IdMatriz && (instituicao.IdMatriz == null || instituicao.IdMatriz != IdMatriz))
                 return false;
 
-            db.Pessoa.Remove(pessoa);
+            db.Pessoas.Remove(pessoa);
             db.SaveChanges();
             db.Dispose();
             return true;

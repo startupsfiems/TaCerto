@@ -12,7 +12,7 @@ namespace TaCertoForms.Factory {
 
         public Instituicao FindInstituicao(int? id) {
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null) return null;
             Instituicao instituicao = db.Instituicao.Find(pessoa.IdInstituicao);
             if(instituicao == null) return null;
@@ -21,7 +21,7 @@ namespace TaCertoForms.Factory {
 
         public List<Instituicao> InstituicaoList() {
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null) return null;
             List<Instituicao> instituicaoList = db.Instituicao.Where(i => i.IdInstituicao == pessoa.IdInstituicao).ToList();
             return instituicaoList;

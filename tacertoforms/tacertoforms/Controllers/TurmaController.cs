@@ -14,6 +14,8 @@ namespace TaCertoForms.Controllers {
         [Perfil(Perfil.Administrador)]
         public ActionResult Index() {
             List<Instituicao> list = Collection.InstituicaoList();
+            if (list == null)
+                list = new List<Instituicao>();
             ViewBag.InstituicaoList = list;
             return View(Collection.TurmaList());
         }

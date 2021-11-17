@@ -318,51 +318,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MidiasHelper.cs" />
-    <Compile Include="Migrations\201910242045556_Primeira migration.cs" />
-    <Compile Include="Migrations\201910242045556_Primeira migration.designer.cs">
-      <DependentUpon>201910242045556_Primeira migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910250331260_matriz.cs" />
-    <Compile Include="Migrations\201910250331260_matriz.designer.cs">
-      <DependentUpon>201910250331260_matriz.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910250340100_matriz 2.cs" />
-    <Compile Include="Migrations\201910250340100_matriz 2.designer.cs">
-      <DependentUpon>201910250340100_matriz 2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291456573_Disciplina IdMatriz.cs" />
-    <Compile Include="Migrations\201910291456573_Disciplina IdMatriz.designer.cs">
-      <DependentUpon>201910291456573_Disciplina IdMatriz.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291457523_Disciplina IdMatriz constraint.cs" />
-    <Compile Include="Migrations\201910291457523_Disciplina IdMatriz constraint.designer.cs">
-      <DependentUpon>201910291457523_Disciplina IdMatriz constraint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911011436310_Atividade nome.cs" />
-    <Compile Include="Migrations\201911011436310_Atividade nome.designer.cs">
-      <DependentUpon>201911011436310_Atividade nome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911011534000_Atividade nome titulo.cs" />
-    <Compile Include="Migrations\201911011534000_Atividade nome titulo.designer.cs">
-      <DependentUpon>201911011534000_Atividade nome titulo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911082007303_Resposta Aluno.cs" />
-    <Compile Include="Migrations\201911082007303_Resposta Aluno.designer.cs">
-      <DependentUpon>201911082007303_Resposta Aluno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001081319512_atividade_numero_questoes.cs" />
-    <Compile Include="Migrations\202001081319512_atividade_numero_questoes.designer.cs">
-      <DependentUpon>202001081319512_atividade_numero_questoes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001091448417_rgb disciplina.cs" />
-    <Compile Include="Migrations\202001091448417_rgb disciplina.designer.cs">
-      <DependentUpon>202001091448417_rgb disciplina.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001091452112_rgdcor2.cs" />
-    <Compile Include="Migrations\202001091452112_rgdcor2.designer.cs">
-      <DependentUpon>202001091452112_rgdcor2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AtividadeAluno.cs" />
     <Compile Include="Models\AtividadeRespostaAluno.cs" />
     <Compile Include="Models\DisciplinaTurma.cs" />
@@ -3406,41 +3361,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910242045556_Primeira migration.resx">
-      <DependentUpon>201910242045556_Primeira migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910250331260_matriz.resx">
-      <DependentUpon>201910250331260_matriz.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910250340100_matriz 2.resx">
-      <DependentUpon>201910250340100_matriz 2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291456573_Disciplina IdMatriz.resx">
-      <DependentUpon>201910291456573_Disciplina IdMatriz.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291457523_Disciplina IdMatriz constraint.resx">
-      <DependentUpon>201910291457523_Disciplina IdMatriz constraint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911011436310_Atividade nome.resx">
-      <DependentUpon>201911011436310_Atividade nome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911011534000_Atividade nome titulo.resx">
-      <DependentUpon>201911011534000_Atividade nome titulo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911082007303_Resposta Aluno.resx">
-      <DependentUpon>201911082007303_Resposta Aluno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001081319512_atividade_numero_questoes.resx">
-      <DependentUpon>202001081319512_atividade_numero_questoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001091448417_rgb disciplina.resx">
-      <DependentUpon>202001091448417_rgb disciplina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001091452112_rgdcor2.resx">
-      <DependentUpon>202001091452112_rgdcor2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

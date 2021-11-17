@@ -11,6 +11,8 @@ namespace TaCertoForms.Models {
         public Periodo Periodo { get; set; } //nullable + enum(matutino, vespertino, noturno, integral)
 
         //NAVIGATION PROPERTY
+        [ForeignKey("Instituicao")]
+        public int? InstituicaoIdInstituicao { get; set; }
         public Instituicao Instituicao { get; set; }
     }
 }

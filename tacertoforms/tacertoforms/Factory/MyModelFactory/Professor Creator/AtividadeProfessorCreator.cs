@@ -36,7 +36,7 @@ namespace TaCertoForms.Factory {
             idAuxList = new List<int>();
             foreach(var i in instituicaoList) idAuxList.Add(i.IdInstituicao);
 
-            List<Pessoa> pessoaList = db.Pessoa.Where(p => idAuxList.Contains(p.IdInstituicao)).ToList();
+            List<Pessoa> pessoaList = db.Pessoas.Where(p => idAuxList.Contains(p.IdInstituicao)).ToList();
             if(pessoaList == null || pessoaList.Count == 0) return null;
             idAuxList = new List<int>();
             foreach(var p in pessoaList) idAuxList.Add(p.IdPessoa);
@@ -55,7 +55,7 @@ namespace TaCertoForms.Factory {
 
         public Atividade CreateAtividade(Atividade atividade) {
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null) return null;
 
             List<int> idAuxList = new List<int>();
@@ -81,7 +81,7 @@ namespace TaCertoForms.Factory {
         public Atividade EditAtividade(Atividade atividade) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Atividade atividadeBanco = db.Atividade.Find(atividade.IdAtividade);
             if(pessoa == null || atividadeBanco == null || atividade.IdAtividade == 0) return null;
             atividade.NumeroQuestoes = atividadeBanco.NumeroQuestoes;
@@ -109,7 +109,7 @@ namespace TaCertoForms.Factory {
         public Atividade FindAtividade(int? id) {
             Context db = new Context();
             List<int> idAuxList;
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Atividade atividade = db.Atividade.Find(id);
             if(pessoa == null || atividade == null) return null;
 

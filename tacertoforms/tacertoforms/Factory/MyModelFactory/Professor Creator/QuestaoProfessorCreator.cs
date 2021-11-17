@@ -13,7 +13,7 @@ namespace TaCertoForms.Factory {
         public Questao CreateQuestao(Questao questao) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Questao questaoBanco = db.Questao.Find(questao.IdQuestao);
             if(pessoa == null) return null;
             if(questaoBanco != null) return questaoBanco;
@@ -47,7 +47,7 @@ namespace TaCertoForms.Factory {
         public bool DeleteQuestao(int? id) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Questao questao = db.Questao.Find(id);
             if(pessoa == null || questao == null) return false;
 
@@ -80,7 +80,7 @@ namespace TaCertoForms.Factory {
         public Questao EditQuestao(Questao questao) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Questao questaoBanco = db.Questao.Find(questao.IdQuestao);
             if(pessoa == null || questaoBanco == null || questao.IdQuestao == 0) return null;
 
@@ -108,7 +108,7 @@ namespace TaCertoForms.Factory {
         public Questao FindQuestao(int? id) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Questao questao = db.Questao.Find(id);
             if(pessoa == null || questao == null) return null;
 
@@ -130,7 +130,7 @@ namespace TaCertoForms.Factory {
         public List<Questao> FindQuestaoByTypeAndActivity(int? idAtividade, int? idTipoQuestao) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null || (idAtividade == null && idTipoQuestao == null)) return null;
 
             List<int> idAuxList = new List<int>();

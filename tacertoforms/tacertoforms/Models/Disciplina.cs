@@ -17,6 +17,8 @@ namespace TaCertoForms.Models {
         public int? CorA;
 
         //NAVIGATION PROPERTY
+        [ForeignKey("Matriz")]
+        public int? MatrizIdInstituicao { get; set; }
         public Instituicao Matriz { get; set; }
     }
 }

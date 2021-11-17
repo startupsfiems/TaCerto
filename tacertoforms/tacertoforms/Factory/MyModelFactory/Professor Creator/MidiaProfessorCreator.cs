@@ -65,7 +65,7 @@ namespace TaCertoForms.Factory {
             if(IdOrigem == null || Tabela == null || Tabela == "") return false;
 
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null) return false;
 
             //Buscando todas as instituições matriz e filiais relacionadas ao usuário cadastrado

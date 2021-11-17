@@ -20,7 +20,7 @@ namespace TaCertoForms.Factory {
         public List<Disciplina> DisciplinaList() {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null) return null;
 
             List<int> idAuxList = new List<int>();
@@ -47,7 +47,7 @@ namespace TaCertoForms.Factory {
             if(id == null) return null;
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Disciplina disciplina = db.Disciplina.Find(id);
             if(pessoa == null || disciplina == null) return null;
 

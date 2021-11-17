@@ -18,6 +18,8 @@ namespace TaCertoForms.Models {
         public Origem Origem { get; set; }
 
         //NAVIGATION PROPERTY
+        [ForeignKey("Pessoa")]
+        public int? PessoaIdPessoa { get; set; }
         public Pessoa Pessoa { get; set; }
     }
 }

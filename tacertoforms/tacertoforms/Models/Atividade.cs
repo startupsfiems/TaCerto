@@ -17,6 +17,8 @@ namespace TaCertoForms.Models {
         public int NumeroQuestoes { get; set; }
 
         //NAVIGATION PROPERTY
+        [ForeignKey("TurmaDisciplinaAutor")]
+        public int? TurmaDisciplinaAutorIdTurmaDisciplinaAutor { get; set; }
         public TurmaDisciplinaAutor TurmaDisciplinaAutor { get; set; }
     }
 }

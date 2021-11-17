@@ -20,10 +20,12 @@ namespace TaCertoForms.Controllers {
                 foreach(var disc in disciplinasBanco) {
                     ViewModelDisciplina vmDisc = new ViewModelDisciplina() { IdDisciplina = disc.IdDisciplina, Nome = disc.Nome, Descricao = disc.Descricao };
                     //List<DisciplinaTurma> aux = disciplinaTurmaList.Where(dt => dt.IdDisciplina == disc.IdDisciplina).ToList();
-                    List<DisciplinaTurma> aux = disciplinaTurmaList.Where(dt => dt.IdDisciplina == disc.IdDisciplina).ToList();
+                    if (disciplinaTurmaList != null) { 
+                        List<DisciplinaTurma> aux = disciplinaTurmaList.Where(dt => dt.IdDisciplina == disc.IdDisciplina).ToList();
 
-                    foreach(var discTurm in aux)
-                        vmDisc.Turmas.Add(Collection.FindTurma(discTurm.IdTurma));
+                        foreach(var discTurm in aux)
+                            vmDisc.Turmas.Add(Collection.FindTurma(discTurm.IdTurma));
+                    }
                     disciplinas.Add(vmDisc);
                 }
             }
