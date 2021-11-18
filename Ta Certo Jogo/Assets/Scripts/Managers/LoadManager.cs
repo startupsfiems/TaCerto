@@ -211,7 +211,7 @@ public class LoadManager : MonoBehaviour
                 }
             }
         }
-
+        Debug.Log("SADSD");
         telaSalaAnimator.SetTrigger("Abrir");
         //loadScreenAnimator.SetTrigger("Fechar");
         loadScreen.SetActive(false);

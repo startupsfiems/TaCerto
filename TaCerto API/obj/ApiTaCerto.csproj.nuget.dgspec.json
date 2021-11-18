@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {}
+    "D:\\Sesi\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {
+    "D:\\Sesi\\TaCerto\\TaCerto API\\ApiTaCerto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
+        "projectUniqueName": "D:\\Sesi\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
         "projectName": "ApiTaCerto",
-        "projectPath": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
-        "packagesPath": "C:\\Users\\fernando.gallardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fernando.gallardo\\Documents\\GitHub\\TaCerto\\TaCerto API\\obj\\",
+        "projectPath": "D:\\Sesi\\TaCerto\\TaCerto API\\ApiTaCerto.csproj",
+        "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
+        "outputPath": "D:\\Sesi\\TaCerto\\TaCerto API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fernando.gallardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,7 +76,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

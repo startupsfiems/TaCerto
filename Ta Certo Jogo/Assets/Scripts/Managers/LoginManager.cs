@@ -62,6 +62,7 @@ public class LoginManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(GameConstants.TOKEN_PATH) && PlayerPrefs.HasKey(GameConstants.ID_TOKEN_PATH))
         {
+            Debug.Log(PlayerPrefs.HasKey(GameConstants.ID_TOKEN_PATH));
             loadManager.loadScreen.SetActive(true);
 
             int idtoken = PlayerPrefs.GetInt(GameConstants.ID_TOKEN_PATH);
@@ -258,7 +259,7 @@ public class LoginManager : MonoBehaviour
         }
         catch (ArgumentException e)
         {
-            UnityEngine.Debug.Log("json inválido - " + e);
+            Debug.Log("json inválido - " + e);
         }
     }
 

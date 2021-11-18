@@ -78,29 +78,37 @@ public class RestClient : MonoBehaviour
 
     public IEnumerator Get(int op, string offset, Action<RespostaPadrao, int, int, int, bool> callBack, bool isDefault, int id = -1, int id2 = -1, int id3 = -1)
     {
+        Debug.Log("To no GET");
+
         string url = GetUrl(op) + offset;
+        Debug.Log("url = " + url);
         using (UnityWebRequest unityWebRequest = new UnityWebRequest())
         {
             SetUpUnityWebRequest(unityWebRequest, url, "get", true);
 
             yield return unityWebRequest.SendWebRequest();
 
-            if (unityWebRequest.isNetworkError)
+            if (unityWebRequest.result == UnityWebRequest.Result.ConnectionError)
             {
+                Debug.Log("eNTROU NO ERRO");
+
                 CheckInternet();
             }
             else
             {
+                Debug.Log("FPO Ç[A");
+
                 if (unityWebRequest.isDone && unityWebRequest.downloadHandler.isDone)
                 {
                     string jsonResult = Encoding.UTF8.GetString(unityWebRequest.downloadHandler.data);
+                    Debug.Log(jsonResult);
                     try
                     {
                         RespostaPadrao resposta = JsonConvert.DeserializeObject<RespostaPadrao>(jsonResult);
 
                         callBack(resposta, id, id, id, isDefault);
                     }
-                    catch(Exception e)
+                    catch
                     {
                         Debug.LogError(url + "\n" + jsonResult);
                         callBack(null, id, id, id, isDefault);
@@ -114,23 +122,28 @@ public class RestClient : MonoBehaviour
     public IEnumerator Post(int op, string offset, string jsonBody, Action<RespostaPadrao, int, int, int, bool> callBack, int id = -1, bool needUpload = true)
     {
         string url = GetUrl(op) + offset;
+        Debug.Log(url);
 
         using (UnityWebRequest unityWebRequest = new UnityWebRequest())
         {
             SetUpUnityWebRequest(unityWebRequest, url, "post", true, needUpload, jsonBody);
 
             yield return unityWebRequest.SendWebRequest();
+            Debug.Log("yield");
 
-            if (unityWebRequest.isNetworkError)
+            if (unityWebRequest.result == UnityWebRequest.Result.ConnectionError)
             {
                 Debug.LogError("Código de resposta: " + unityWebRequest.error);
                 CheckInternet();
             }
             else
             {
+                Debug.Log("eita " + unityWebRequest.isDone);
+                Debug.Log("eita 2 " + unityWebRequest.downloadHandler.isDone);
                 if (unityWebRequest.isDone && unityWebRequest.downloadHandler.isDone)
                 {
                     string jsonResult = Encoding.UTF8.GetString(unityWebRequest.downloadHandler.data);
+                    Debug.Log(jsonResult);
                     try
                     {
                         RespostaPadrao resposta = JsonConvert.DeserializeObject<RespostaPadrao>(jsonResult);
@@ -201,7 +214,7 @@ public class RestClient : MonoBehaviour
         }
 
         unityWebRequest.useHttpContinue = false;
-        unityWebRequest.chunkedTransfer = false;
+        //unityWebRequest.chunkedTransfer = false;
         unityWebRequest.redirectLimit = 0;
 
         AcceptAllCertificatesSignedWithASpecificKeyPublicKey certHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey();
@@ -307,6 +320,7 @@ public class RestClient : MonoBehaviour
     IEnumerator checkServerConnection(Action<long> action)
     {
         string url = PESSOAS_URL + "checaConexao";
+        Debug.Log(url);
         using (UnityWebRequest unityWebRequest = new UnityWebRequest())
         {
             SetUpUnityWebRequest(unityWebRequest, url, "get", true);
