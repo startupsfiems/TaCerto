@@ -23,7 +23,7 @@ namespace TaCertoForms.Controllers {
 
         [HttpPost]
         public ActionResult Autenticar(string email, string senha) {
-            Pessoa pessoa = db.Pessoa.Where(p => p.Email == email && p.Senha == senha).FirstOrDefault();
+            Pessoa pessoa = db.Pessoas.Where(p => p.Email == email && p.Senha == senha).FirstOrDefault();
             ViewBag.ToastMessage = null;
 
             if(pessoa == null) {
@@ -85,10 +85,16 @@ namespace TaCertoForms.Controllers {
 
         private int GetIdMatriz(Pessoa p) {
             Instituicao i = db.Instituicao.Find(p.IdInstituicao);
+            if (i == null)
+                return -1;
+
             if(i.IsMatriz)
                 return i.IdInstituicao;
             else {
                 i = db.Instituicao.Find(i.IdMatriz);
+                if (i == null)
+                    return -1;
+
                 return i.IdInstituicao;
             }
         }
@@ -97,7 +103,7 @@ namespace TaCertoForms.Controllers {
         }
 
         public ActionResult Token(string token) {
-            Pessoa pessoa = db.Pessoa.Where(x => x.Token == token).FirstOrDefault();
+            Pessoa pessoa = db.Pessoas.Where(x => x.Token == token).FirstOrDefault();
             if(pessoa == null)
                 TempData["error"] = "Token inválido ou expirado. Solicite novamente sua redefinição de senha";
             return View();
@@ -105,7 +111,7 @@ namespace TaCertoForms.Controllers {
 
         [HttpPost]
         public ActionResult Token(string senha, string token) {
-            Pessoa pessoa = db.Pessoa.Where(x => x.Token == token).FirstOrDefault();
+            Pessoa pessoa = db.Pessoas.Where(x => x.Token == token).FirstOrDefault();
 
             if(pessoa == null || pessoa.Token == null || pessoa.TokenDate == null)
                 TempData["error"] = "Token inválido ou expirado. Solicite novamente sua redefinição de senha";
@@ -135,7 +141,7 @@ namespace TaCertoForms.Controllers {
 
         [HttpPost]
         public ActionResult EsqueciSenha(string email) {
-            Pessoa pessoa = db.Pessoa.Where(p => p.Email == email).FirstOrDefault();
+            Pessoa pessoa = db.Pessoas.Where(p => p.Email == email).FirstOrDefault();
             if(pessoa == null)
                 TempData["error"] = "Nenhum usuário encontrado.";
             else {

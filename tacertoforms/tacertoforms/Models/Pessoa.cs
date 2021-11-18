@@ -22,6 +22,8 @@ namespace TaCertoForms.Models {
         public DateTime? TokenDate { get; set; }
 
         //NAVIGATION PROPERTY
+        [ForeignKey("Instituicao")]
+        public int? InstituicaoIdInstituicao { get; set; }
         public Instituicao Instituicao { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace ApiTaCerto.Logic
                 return resposta;
             }
 
-            PessoaInfo pessoaInfo = new PessoaInfo(pessoa.IdPessoa, pessoa.IdInstituicao, pessoa.Perfil, pessoa.Nome, pessoa.Email);
+            PessoaInfo pessoaInfo = new PessoaInfo(pessoa.IdPessoa, pessoa.IdInstituicao, (int)pessoa.Perfil, pessoa.Nome, pessoa.Email);
 
             resposta.Dado = pessoaInfo;
 
@@ -85,9 +85,7 @@ namespace ApiTaCerto.Logic
                 return resposta;
             }
 
-            string senhaDescri = Criptografia.Decrypt(pessoa.Senha);
-
-            if (!senha.Equals(senhaDescri))
+            if (!pessoa.Senha.Equals(senha))
             {
                 resposta.SetNaoEncontrado("Email e/ou Senha incorreto(s)");
                 return resposta;
@@ -167,9 +165,9 @@ namespace ApiTaCerto.Logic
                 return resposta;
             }
 
-            string senhaDescri = Criptografia.Decrypt(pessoa.Senha);
+            // string senhaDescri = Criptografia.Decrypt(pessoa.Senha);
 
-            if (!usuarioTrocaSenha.Senha.Equals(senhaDescri))
+            if (!usuarioTrocaSenha.Senha.Equals(pessoa.Senha))
             {
                 resposta.SetCampoIncorreto("A senha atual não está correta");
                 return resposta;
@@ -177,8 +175,8 @@ namespace ApiTaCerto.Logic
 
             try
             {
-                string novaSenhaCript = Criptografia.Encrypt(usuarioTrocaSenha.NovaSenha);
-                pessoa.Senha = novaSenhaCript;
+                // string novaSenhaCript = Criptografia.Encrypt(usuarioTrocaSenha.NovaSenha);
+                pessoa.Senha = usuarioTrocaSenha.NovaSenha;
                 await _pessoaRepositorio.Update(pessoa);
             }
             catch
@@ -227,7 +225,7 @@ namespace ApiTaCerto.Logic
                 };
 
                 string data = DateTime.Now.Date.ToString();
-                string toGenerateKey = pessoa.Cpf+SecurityKey + pessoa.Nome;
+                string toGenerateKey = pessoa.CPF+SecurityKey + pessoa.Nome;
 
                 var key = new SymmetricSecurityKey(
                     Encoding.UTF8.GetBytes(toGenerateKey)

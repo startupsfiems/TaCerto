@@ -18,7 +18,9 @@ namespace TaCertoForms.Controllers {
             List<TurmaDisciplinaAutor> tda = Collection.TurmaDisciplinaAutorList();
 
             List<int> idAuxList = new List<int>();
-            foreach(var listtda in tda) idAuxList.Add(listtda.IdTurmaDisciplinaAutor);
+            if (tda == null)
+                tda = new List<TurmaDisciplinaAutor>();
+            foreach (var listtda in tda) idAuxList.Add(listtda.IdTurmaDisciplinaAutor);
 
             List<Atividade> atividades = Collection.AtividadeList()?.Where(x => idAuxList.Contains(x.IdTurmaDisciplinaAutor)).ToList();
 

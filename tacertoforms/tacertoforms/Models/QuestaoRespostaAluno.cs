@@ -14,7 +14,11 @@ namespace TaCertoForms.Models {
         public float Nota { get; set; }
 
         //NAVIGATION PROPERTY
+        [ForeignKey("AtividadeRespostaAluno")]
+        public int? AtividadeRespostaAlunoIdAtividadeRespostaAluno { get; set; }
         public AtividadeRespostaAluno AtividadeRespostaAluno { get; set; }
+        [ForeignKey("Questao")]
+        public int? QuestaoIdQuestao { get; set; }
         public Questao Questao { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace TaCertoForms.Factory {
             QuestaoRespostaAluno questaoRespostaAluno = db.QuestaoRespostaAluno.Find(id);
             if(questaoRespostaAluno == null) return false;
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             Questao questao = db.Questao.Find(questaoRespostaAluno.IdQuestao);
             if(pessoa == null || questao == null) return false;
 
@@ -53,7 +53,7 @@ namespace TaCertoForms.Factory {
         public List<QuestaoRespostaAluno> FindQuestaoRespostaAlunoByQuestao(int? idQuestao) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             List<QuestaoRespostaAluno> questaoRespostaAluno = db.QuestaoRespostaAluno.Where(x => x.IdQuestao == idQuestao).ToList();
             if (pessoa == null || questaoRespostaAluno == null || questaoRespostaAluno.Count == 0) return null;
 
@@ -86,7 +86,7 @@ namespace TaCertoForms.Factory {
             idAuxList = new List<int>();
             foreach(var i in instituicaoList) idAuxList.Add(i.IdInstituicao);
 
-            List<Pessoa> pessoaList = db.Pessoa.Where(p => idAuxList.Contains(p.IdInstituicao)).ToList();
+            List<Pessoa> pessoaList = db.Pessoas.Where(p => idAuxList.Contains(p.IdInstituicao)).ToList();
             if(pessoaList == null || pessoaList.Count == 0) return null;
             idAuxList = new List<int>();
             foreach(var p in pessoaList) idAuxList.Add(p.IdPessoa);

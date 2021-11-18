@@ -66,7 +66,7 @@ namespace TaCertoForms.Factory {
             if(IdOrigem == null || Tabela == null || Tabela == "") return false;
 
             Context db = new Context();
-            Pessoa pessoa = db.Pessoa.Find(IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(IdPessoa);
             if(pessoa == null) return false;
 
             //Buscando todas as instituições matriz e filiais relacionadas ao usuário cadastrado
@@ -83,7 +83,7 @@ namespace TaCertoForms.Factory {
             }
             else if(Tabela == "Pessoa") {
                 if(pessoa.Perfil.Equals(Perfil.Administrador)) {
-                    Pessoa pessoaFind = db.Pessoa.Find(IdOrigem);
+                    Pessoa pessoaFind = db.Pessoas.Find(IdOrigem);
                     if(pessoaFind == null) return false;
                     if(idInstituicaoList.Contains((int)pessoaFind.IdInstituicao))
                         return true;

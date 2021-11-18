@@ -22,8 +22,14 @@ namespace TaCertoForms.Models {
         public int? IdMatriz { get; set; }
 
         //NAVIGATION PROPERTY
+        [ForeignKey("EnderecoPrincipal")]
+        public int? EnderecoPrincipalIdEndereco { get; set; }
         public Endereco EnderecoPrincipal { get; set; }
+        [ForeignKey("EnderecoCobranca")]
+        public int? EnderecoCobrancaIdEndereco { get; set; }
         public Endereco EnderecoCobranca { get; set; }
+        [ForeignKey("Matriz")]
+        public int? MatrizIdInstituicao { get; set; }
         public Instituicao Matriz { get; set; }
     }
 }

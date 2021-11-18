@@ -17,7 +17,7 @@ namespace ApiTaCerto.Repositorio
 
         public async Task Add(Pessoa pessoa)
         {
-            await _contexto.Pessoas.AddAsync(pessoa);
+            await _contexto.Pessoa.AddAsync(pessoa);
             await _contexto.SaveChangesAsync();
         }
 
@@ -33,14 +33,14 @@ namespace ApiTaCerto.Repositorio
 
         public Pessoa Find(long id)
         {
-            Pessoa pessoa = _contexto.Pessoas.FirstOrDefault(p => p.IdPessoa == id);
+            Pessoa pessoa = _contexto.Pessoa.FirstOrDefault(p => p.IdPessoa == id);
 
             return pessoa;
         }
 
         public Pessoa Find(string email, int perfil)
         {
-            return _contexto.Pessoas.FirstOrDefault(p => p.Email == email && p.Perfil == perfil);
+            return _contexto.Pessoa.FirstOrDefault(p => p.Email == email && (int)p.Perfil == perfil);
         }
 
         public PessoaToken FindPessoaToken(long id){
@@ -49,40 +49,40 @@ namespace ApiTaCerto.Repositorio
 
         public IEnumerable<Pessoa> GetAll()
         {
-            return _contexto.Pessoas.ToList();
+            return _contexto.Pessoa.ToList();
         }
 
         public async Task Remove(long id)
         {
-            var entity = _contexto.Pessoas.First(p => p.IdPessoa == id);
-            _contexto.Pessoas.Remove(entity);
+            var entity = _contexto.Pessoa.First(p => p.IdPessoa == id);
+            _contexto.Pessoa.Remove(entity);
             await _contexto.SaveChangesAsync();
         }
 
         public async Task Update(Pessoa pessoa)
         {
-            _contexto.Pessoas.Update(pessoa);
+            _contexto.Pessoa.Update(pessoa);
             await _contexto.SaveChangesAsync();
         }
 
         public TurmaAluno FindTurmaAluno(int idPessoa){
-            return _contexto.TurmaAlunos.FirstOrDefault(ta => ta.IdPessoa == idPessoa);
+            return _contexto.TurmaAluno.FirstOrDefault(ta => ta.IdPessoa == idPessoa);
         }
 
         public Turma FindTurma(int idTurma){
-            return _contexto.Turmas.FirstOrDefault(tu => tu.IdTurma == idTurma);
+            return _contexto.Turma.FirstOrDefault(tu => tu.IdTurma == idTurma);
         }
 
         public Midia FindMidia(int idOrigem, string tabela)
         {
-            return _contexto.Midias.FirstOrDefault(midia => midia.IdOrigem == idOrigem && 
+            return _contexto.Midia.FirstOrDefault(midia => midia.IdOrigem == idOrigem && 
             midia.Tabela == tabela);
         }
 
         public async Task<string> SaveLogLogin(LogLogin logLogin)
         {
             try { 
-                await _contexto.logLogins.AddAsync(logLogin);
+                await _contexto.LogLogin.AddAsync(logLogin);
                 await _contexto.SaveChangesAsync();
             }
             catch

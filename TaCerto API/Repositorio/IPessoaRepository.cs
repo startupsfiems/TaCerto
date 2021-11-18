@@ -7,9 +7,9 @@ namespace ApiTaCerto.Repositorio
 {
     public interface IPessoaRepository
     {
-         Task Add(Pessoa pessoa);
+        Task Add(Pessoa pessoa);
 
-         Task AddPessoaToken(PessoaToken pessoaToken);
+        Task AddPessoaToken(PessoaToken pessoaToken);
 
         Task RemovePessoaToken(PessoaToken pessoaToken);
 
@@ -19,9 +19,7 @@ namespace ApiTaCerto.Repositorio
 
         Pessoa Find(string email, int perfil);
 
-
         PessoaToken FindPessoaToken(long id);
-
 
         Task Remove(long id);
 

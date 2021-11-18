@@ -6,10 +6,10 @@ using ApiTaCerto.Repositorio;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -18,6 +18,8 @@ namespace ApiTaCerto
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,20 +36,30 @@ namespace ApiTaCerto
             services.AddTransient<IAtividadeRepository, AtividadeRepository>();
             services.AddTransient<IMidiaRepository, MidiaRepository>();
 
-            services.AddCors(options => {
-                options.AddPolicy("AllowMyOrigin", builder => builder.WithOrigins("http://startuphomolog.sesims.com.br"));
+            services.AddCors(options => 
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
+
+            services.AddControllers();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo{ Title = "Api Tá Certo", Version = "v1"});
             });
 
             services.AddAuthentication(options => {
-                options.DefaultAuthenticateScheme = "bearer";
-                options.DefaultChallengeScheme = "bearer";
-            }).AddJwtBearer("bearer", options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => {
                     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters{
                         ValidateIssuer = true,
                         ValidateAudience = true,
@@ -74,28 +86,32 @@ namespace ApiTaCerto
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 IdentityModelEventSource.ShowPII = true; 
             }
-            else
-            {
-                app.UseHsts();
-            }
+
+            app.UseHttpsRedirection();
 
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Tá Certo V1");
             });
 
-            app.UseCors("AllowMyOrigin");
+            app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthentication();
+            app.UseAuthorization();
 
-            app.UseMvc();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

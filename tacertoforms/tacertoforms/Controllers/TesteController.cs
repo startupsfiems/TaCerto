@@ -22,7 +22,7 @@ namespace tacertoforms.Controllers {
             List<DisciplinaTurma> dts = db.DisciplinaTurma.Select(x => x).ToList(); db.Dispose();db = new Context();
             List<Disciplina> disciplinas = db.Disciplina.Select(x => x).ToList(); db.Dispose();db = new Context();
             List<Turma> turmas = db.Turma.Select(x => x).ToList(); db.Dispose();db = new Context();
-            List<Pessoa> pessoas = db.Pessoa.Select(x => x).ToList(); db.Dispose();db = new Context();
+            List<Pessoa> pessoas = db.Pessoas.Select(x => x).ToList(); db.Dispose();db = new Context();
             List<Instituicao> instituicoes_filhas = db.Instituicao.Where(x => x.IsMatriz == false).ToList(); db.Dispose();db = new Context();
             List<Instituicao> instituicoes_pais = db.Instituicao.Where(x => x.IsMatriz == true).ToList(); db.Dispose(); db = new Context();
             List<Endereco> enderecos = db.Endereco.Select(x => x).ToList(); db.Dispose();db = new Context();
@@ -56,7 +56,7 @@ namespace tacertoforms.Controllers {
             Endereco endereco = new Endereco { Pais = "Brasil", UF = "MS", Cidade = "Campo Grande", Numero = 1206, CEP = "79.005-901", Logradouro = "Av. Afonso Pena", Bairro = "Amambai"}; db.Endereco.Add(endereco); db.SaveChanges(); db.Dispose(); db = new Context();
             Instituicao instituicao = new Instituicao { RazaoSocial = "SESI Mato Grosso do Sul", NomeFantasia = "SESI Mato Grosso do Sul", CNPJ = "56.397.653/0001-00", Email = "contato@sesims.com.br", Telefone = "(67) 3389-9142", IdEnderecoPrincipal = endereco.IdEndereco, IdEnderecoCobranca = endereco.IdEndereco, IsMatriz = true }; db.Instituicao.Add(instituicao); db.SaveChanges(); db.Dispose(); db = new Context();
             Instituicao instituicaoatt = new Instituicao { RazaoSocial = "SESI Mato Grosso do Sul", NomeFantasia = "SESI Mato Grosso do Sul", CNPJ = "56.397.653/0001-00", Email = "contato@sesims.com.br", Telefone = "(67) 3389-9142", IdInstituicao = instituicao.IdInstituicao, IdMatriz = instituicao.IdInstituicao, IdEnderecoCobranca = endereco.IdEndereco, IdEnderecoPrincipal = endereco.IdEndereco, IsMatriz = true }; db.Entry(instituicaoatt).State = System.Data.Entity.EntityState.Modified; db.SaveChanges(); db.Dispose(); db = new Context();
-            Pessoa pessoa = new Pessoa { IdInstituicao = instituicao.IdInstituicao, Perfil = Perfil.Administrador, Nome = "Admin", CPF = "279.588.971-46", Email = "admin@sesims.com.br", Senha = "123"}; db.Pessoa.Add(pessoa); db.SaveChanges(); db.Dispose(); db = new Context();
+            Pessoa pessoa = new Pessoa { IdInstituicao = instituicao.IdInstituicao, Perfil = Perfil.Administrador, Nome = "Admin", CPF = "279.588.971-46", Email = "admin@sesims.com.br", Senha = "123"}; db.Pessoas.Add(pessoa); db.SaveChanges(); db.Dispose(); db = new Context();
             
             /*
             Turma turma = new Turma { IdInstituicao = instituicao.IdInstituicao,Serie = "1º Ano A",Periodo = Periodo.Matutino }; db.Turma.Add(turma); db.SaveChanges(); db.Dispose(); db = new Context();

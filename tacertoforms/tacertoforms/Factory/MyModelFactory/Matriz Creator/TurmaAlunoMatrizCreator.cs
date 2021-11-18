@@ -17,7 +17,7 @@ namespace TaCertoForms.Factory {
             TurmaAluno turmaAluno = db.TurmaAluno.Find(id);
             if(turmaAluno == null) return null;
 
-            Pessoa aluno = db.Pessoa.Find(turmaAluno.IdPessoa);
+            Pessoa aluno = db.Pessoas.Find(turmaAluno.IdPessoa);
             if(aluno == null) return null;
 
             Instituicao instituicao = db.Instituicao.Find(aluno.IdInstituicao);
@@ -49,7 +49,7 @@ namespace TaCertoForms.Factory {
         public TurmaAluno CreateTurmaAluno(TurmaAluno turmaAluno) {
             Context db = new Context();
 
-            Pessoa pessoa = db.Pessoa.Find(turmaAluno.IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(turmaAluno.IdPessoa);
             if(pessoa == null) return null;
 
             TurmaAluno ta = db.TurmaAluno.Where(x => x.IdPessoa == turmaAluno.IdPessoa).FirstOrDefault();
@@ -83,7 +83,7 @@ namespace TaCertoForms.Factory {
                     return null;
             }
             if(turmaAluno_aux.IdPessoa != turmaAluno.IdPessoa) {
-                Pessoa pessoa = db.Pessoa.Find(turmaAluno.IdPessoa);
+                Pessoa pessoa = db.Pessoas.Find(turmaAluno.IdPessoa);
                 if(pessoa == null) return null;
 
                 Instituicao instituicao_aux = db.Instituicao.Find(pessoa.IdInstituicao);
@@ -112,7 +112,7 @@ namespace TaCertoForms.Factory {
             Instituicao instituicao = db.Instituicao.Find(turma.IdInstituicao);
             if(instituicao == null || (instituicao.IdInstituicao != IdMatriz && instituicao.IdMatriz != IdMatriz)) return false;
 
-            Pessoa pessoa = db.Pessoa.Find(ta.IdPessoa);
+            Pessoa pessoa = db.Pessoas.Find(ta.IdPessoa);
             if(pessoa == null) return false;
 
             AtividadeRespostaAluno atividadeRespostaAluno = db.AtividadeRespostaAluno.Where(ara => ara.IdPessoa == pessoa.IdPessoa).FirstOrDefault();

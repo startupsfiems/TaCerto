@@ -39,7 +39,7 @@ namespace TaCertoForms.Controllers.Base {
                 turmaAlunos = turmaAlunos.Concat(ta_aux).ToList();
             }
             foreach(var ta in turmaAlunos) {
-                Pessoa p = db.Pessoa.Find(ta.IdPessoa);
+                Pessoa p = db.Pessoas.Find(ta.IdPessoa);
                 if(p != null)
                     alunos.Add(p);
             }
@@ -56,7 +56,7 @@ namespace TaCertoForms.Controllers.Base {
             }
             List<Pessoa> pessoas = new List<Pessoa>();
             foreach(var i in instituicoes) {
-                List<Pessoa> p_aux = db.Pessoa.Where(p => p.IdInstituicao == i.IdInstituicao).ToList();
+                List<Pessoa> p_aux = db.Pessoas.Where(p => p.IdInstituicao == i.IdInstituicao).ToList();
                 if(p_aux != null)
                     pessoas = pessoas.Concat(p_aux).ToList();
             }
@@ -67,7 +67,7 @@ namespace TaCertoForms.Controllers.Base {
         protected List<Atividade> GetMinhasAtividades() {
             Context db = new Context();
             int id =(int)Session["IdPessoa"];
-            Pessoa p = db.Pessoa.Find(id);
+            Pessoa p = db.Pessoas.Find(id);
             List<TurmaDisciplinaAutor> turmaDisciplinaAutorList = db.TurmaDisciplinaAutor.Where(tda => tda.IdAutor == p.IdPessoa).ToList();
             List<Atividade> atividadeList = new List<Atividade>();
             if(turmaDisciplinaAutorList != null)
